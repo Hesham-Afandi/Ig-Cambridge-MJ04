@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📐 امتحان Cambridge IGCSE Math 0580 — مايو/يونيو 2004</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;margin:0;background:#f9fafb}
+body.en-mode{font-family:'Inter',sans-serif}
+.correct{background-color:#dcfce7!important;border-color:#16a34a!important}
+.incorrect{background-color:#fee2e2!important;border-color:#dc2626!important}
+.timer-warning{color:#dc2626!important;animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.7}}
+@media print{.no-print{display:none!important}.page-break{page-break-before:always}body{padding-top:0}.sidebar{display:none}.main-container{margin:0!important}}
+.success-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-weight:bold;font-size:.875rem}
+.grade-excellent{background:#dcfce7;color:#166534}.grade-good{background:#fef3c7;color:#92400e}.grade-pass{background:#dbeafe;color:#1e40af}.grade-fail{background:#fee2e2;color:#991b1b}
+.question-card{background:white;border-radius:10px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,.05);border-left:4px solid #059669;transition:all .3s;font-size:.87rem;line-height:1.7}
+[dir="rtl"] .question-card{border-left:none;border-right:4px solid #059669}
+.question-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.09)}
+.marks-badge{display:inline-block;background:linear-gradient(135deg,#059669,#10b981);color:white;padding:2px 8px;border-radius:10px;font-size:.66rem;font-weight:bold;margin-left:6px}
+.tier-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.62rem;font-weight:bold;margin-left:4px}
+.tier-higher{background:#fee2e2;color:#991b1b}.tier-foundation{background:#dbeafe;color:#1e40af}
+.answer-input{border:2px solid #e5e7eb;border-radius:6px;padding:6px 10px;width:100%;max-width:280px;font-family:inherit;font-size:.82rem;transition:border-color .3s}
+.answer-input:focus{outline:none;border-color:#059669;box-shadow:0 0 0 3px rgba(5,150,105,.1)}
+.section-header{color:white;padding:12px 18px;border-radius:10px;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.section-header h2{margin:0;font-size:.95rem;font-weight:bold}
+.paper-badge{display:inline-block;background:rgba(255,255,255,.25);padding:3px 10px;border-radius:8px;font-size:.72rem;margin-right:6px}
+.reveal-btn{background:linear-gradient(135deg,#059669,#10b981);color:white;border:none;padding:3px 10px;border-radius:6px;cursor:pointer;font-size:.7rem;font-weight:600;transition:all .2s}
+.reveal-btn:hover{transform:scale(1.05)}
+.answer-box{background:linear-gradient(135deg,#dcfce7,#bbf7d0);border:2px solid #16a34a;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:.8rem}
+.top-nav{position:fixed;top:0;left:0;right:0;background:white;box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:200;padding:5px 10px;border-bottom:2px solid #e5e7eb}
+.top-nav-container{max-width:1500px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.nav-title{font-weight:bold;color:#059669;font-size:.78rem;white-space:nowrap}
+.nav-links{display:flex;gap:3px;flex-wrap:wrap}
+.nav-link{padding:3px 7px;background:#f3f4f6;color:#4b5563;border-radius:6px;text-decoration:none;font-size:.64rem;font-weight:600;transition:all .2s;white-space:nowrap}
+.nav-link:hover{background:#d1fae5;color:#059669}
+.progress-container{flex:1;min-width:70px;max-width:180px;display:flex;align-items:center;gap:6px}
+.progress-bar-wrapper{flex:1;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,#059669,#10b981);transition:width .3s;border-radius:3px}
+.progress-text{font-size:.66rem;color:#6b7280;font-weight:600;white-space:nowrap}
+.sidebar{position:fixed;top:55px;left:10px;width:235px;max-height:calc(100vh - 70px);overflow-y:auto;background:white;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.1);padding:10px;z-index:100;font-size:.66rem}
+[dir="ltr"] .sidebar{left:auto;right:10px}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:2px}
+.sidebar-title{font-weight:bold;color:#059669;margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid #e5e7eb;font-size:.74rem}
+.sidebar-session{font-weight:bold;color:white;padding:4px 8px;margin:6px 0 3px;border-radius:6px;font-size:.68rem}
+.sidebar-link{display:block;padding:2px 8px;color:#6b7280;text-decoration:none;border-radius:4px;font-size:.63rem;margin:1px 0;transition:all .2s}
+.sidebar-link:hover{background:#d1fae5;color:#059669}
+body{padding-top:55px}
+@media(min-width:1350px){.main-container{margin-left:255px;margin-right:16px}[dir="ltr"] .main-container{margin-left:16px;margin-right:255px}}
+@media(max-width:1349px){.sidebar{display:none}}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin:10px 0}
+.stat-card{background:white;border-radius:8px;padding:10px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.stat-number{font-size:1.2rem;font-weight:bold;color:#059669}
+.stat-label{font-size:.62rem;color:#6b7280}
+.btn-action{padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;border:none;transition:all .3s}
+.btn-action:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.lang-switch{display:flex;gap:3px;border:2px solid #059669;border-radius:25px;padding:3px;background:white}
+.lang-btn{padding:4px 10px;border-radius:18px;cursor:pointer;font-weight:bold;transition:all .3s;border:none;font-size:.75rem;background:transparent;color:#6b7280}
+.lang-btn.active{background:#059669;color:white}
+.svg-figure{background:#f0fdfa;border:2px dashed #14b8a6;border-radius:8px;padding:8px;margin:8px 0;text-align:center}
+.svg-figure svg{max-width:100%;height:auto}
+.svg-caption{font-size:.65rem;color:#0f766e;font-weight:600;margin-top:4px}
+.data-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.75rem}
+.data-table th,.data-table td{border:1px solid #d1d5db;padding:4px 8px;text-align:center}
+.data-table th{background:#ecfdf5;color:#065f46}
+</style>
+</head>
+<body class="text-gray-800 min-h-screen">
+<nav class="top-nav no-print"><div class="top-nav-container">
+<div class="nav-title">📐 Cambridge IGCSE 0580 — M/J 2004</div>
+<div class="nav-links">
+<a href="#p1" class="nav-link" style="background:#dbeafe;color:#1e40af;">📘 P1</a>
+<a href="#p2" class="nav-link" style="background:#fee2e2;color:#991b1b;">📕 P2</a>
+<a href="#p3" class="nav-link" style="background:#d1fae5;color:#065f46;">📗 P3 Core</a>
+<a href="#p4" class="nav-link" style="background:#ffedd5;color:#9a3412;">📙 P4 Ext</a>
+</div>
+<div class="progress-container"><div class="progress-bar-wrapper"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div><span class="progress-text" id="progressText">0%</span></div>
+<div style="display:flex;gap:6px;align-items:center;">
+<button onclick="scrollToTop()" style="background:#10b981;color:white;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;">⬆️</button>
+<div class="lang-switch">
+<button class="lang-btn active" onclick="setLanguage('ar')" id="btn-ar">عربي</button>
+<button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+</div>
+</div>
+</div></nav>
+<aside class="sidebar no-print" id="sidebar"></aside>
+<div class="main-container">
+<div class="max-w-4xl mx-auto mb-3 text-center no-print" style="margin-top:12px;"><div class="bg-white p-3 rounded-xl shadow-md inline-block border-2 border-emerald-100"><span class="text-gray-600 text-sm" id="time-label">⏱️ الوقت:</span> <span id="timer" class="text-xl font-bold text-emerald-600 font-mono">420:00</span></div></div>
+<div class="max-w-4xl mx-auto mb-3 no-print"><div class="stats-grid">
+<div class="stat-card"><div class="stat-number">4</div><div class="stat-label" id="st-papers">أوراق امتحانية</div></div>
+<div class="stat-card"><div class="stat-number">61</div><div class="stat-label" id="st-questions">سؤال</div></div>
+<div class="stat-card"><div class="stat-number">420</div><div class="stat-label" id="st-minutes">دقيقة</div></div>
+<div class="stat-card"><div class="stat-number">M/J 2004</div><div class="stat-label" id="st-session">الدورة</div></div>
+</div></div>
+<div class="max-w-4xl mx-auto mb-3 flex flex-wrap gap-2 justify-center no-print">
+<button onclick="toggleAllAnswers()" class="btn-action bg-emerald-600 hover:bg-emerald-700 text-white" id="btn-toggle">👁️ إظهار/إخفاء الإجابات</button>
+<button onclick="window.print()" class="btn-action bg-gray-800 hover:bg-gray-900 text-white" id="btn-print">🖨️ طباعة</button>
+<button onclick="expandAll()" class="btn-action bg-teal-600 hover:bg-teal-700 text-white" id="btn-expand">📂 فتح الكل</button>
+<button onclick="collapseAll()" class="btn-action bg-amber-600 hover:bg-amber-700 text-white" id="btn-collapse">📁 طي الكل</button>
+</div>
+<header class="max-w-4xl mx-auto bg-white p-4 rounded-xl shadow-md mb-4 border-r-4 border-emerald-600">
+<div class="text-center">
+<h1 class="text-lg md:text-xl font-bold text-gray-900 mb-1" id="h-title">📐 امتحان Cambridge IGCSE Mathematics (0580) — مايو/يونيو 2004</h1>
+<h2 class="text-sm text-emerald-600 font-semibold" id="h-sub">جميع الأوراق (الأساسي والمتقدم)</h2>
+<p class="text-xs text-gray-600 mt-1" id="h-papers">Papers 1, 2, 3 (أساسي), 4 (متقدم)</p>
+<p class="text-xs text-orange-600 mt-1 font-semibold" id="h-warn">⚠️ 4 أوراق امتحانية — 61 سؤالاً رئيسياً — مع الرسومات التوضيحية</p>
+</div>
+<div class="mt-3 flex flex-wrap justify-center gap-3 text-xs text-gray-600">
+<span>👤 <input type="text" id="studentName" class="border-b border-gray-400 bg-transparent w-24 text-center" placeholder="الاسم"></span>
+<span>🏫 <input type="text" id="studentClass" class="border-b border-gray-400 bg-transparent w-20 text-center" placeholder="الشعبة"></span>
+<span>📅 <input type="text" id="examDate" class="border-b border-gray-400 bg-transparent w-20 text-center" placeholder="التاريخ"></span>
+</div>
+</header>
+<main class="max-w-4xl mx-auto space-y-4" id="exam-content"></main>
+<div class="text-center no-print pb-4 mt-4"><button onclick="gradeExam()" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-base px-8 py-3 rounded-xl font-bold shadow-xl transition transform hover:scale-105 cursor-pointer" id="btn-submit">📝 تسليم وتصحيح الامتحان</button></div>
+<div id="results-panel" class="max-w-4xl mx-auto mt-4 bg-white p-5 rounded-2xl shadow-2xl border-t-4 border-emerald-500 hidden no-print">
+<h2 class="text-xl font-bold text-gray-900 mb-3 text-center" id="res-title">📊 نتائج الامتحان</h2>
+<div class="grid md:grid-cols-3 gap-3 mb-3">
+<div class="bg-blue-50 p-3 rounded-xl text-center"><p class="text-xs" id="rl-name">اسم الطالب</p><p id="res-name" class="font-bold text-lg text-indigo-700">-</p></div>
+<div class="bg-purple-50 p-3 rounded-xl text-center"><p class="text-xs" id="rl-date">التاريخ</p><p id="res-date" class="font-bold text-lg text-purple-700">-</p></div>
+<div class="bg-emerald-50 p-3 rounded-xl text-center"><p class="text-xs" id="rl-total">المجموع</p><p id="res-total" class="font-bold text-xl text-emerald-600">0/61</p></div>
+</div>
+<div class="text-center mb-3"><span id="success-badge" class="success-badge grade-excellent">-</span><p id="success-percent" class="text-2xl font-bold text-emerald-600 mt-1">0%</p><p class="text-xs text-gray-500" id="rl-rate">نسبة النجاح</p></div>
+<div class="bg-gray-50 p-4 rounded-xl mb-3"><h3 class="font-bold text-sm mb-2 text-gray-800" id="rl-perf">📈 تفصيل الأداء حسب الورقة:</h3><div class="grid md:grid-cols-2 gap-x-6 gap-y-2" id="paper-scores"></div></div>
+<div class="flex gap-3 justify-center"><button onclick="window.print()" class="bg-gray-700 text-white px-4 py-2 rounded-lg text-xs font-semibold cursor-pointer" id="btn-printres">🖨️ طباعة النتائج</button></div>
+</div>
+<footer class="max-w-4xl mx-auto mt-6 mb-4 text-center text-gray-500 text-xs no-print">© Cambridge IGCSE Mathematics (0580) — May/June 2004|Mr.Mohammed Hesham </footer>
+</div>
+
+<script>
+let currentLang='ar',answersVisible=false,timeRemaining=25200;
+
+/* ══════════════ SVG FIGURES (من محتوى الملف) ══════════════ */
+const SVG_FIGURES = {
+mj04p1q10: `<div class="svg-figure"><svg viewBox="0 0 220 180" width="210"><polygon points="110,15 170,85 110,165 50,85" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><line x1="110" y1="15" x2="110" y2="165" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/></svg><div class="svg-caption" data-cap-ar="س10: طائرة ورقية (Kite) — خط تناظر رأسي واحد" data-cap-en="Q10: A kite — one vertical line of symmetry">س10: طائرة ورقية (Kite) — خط تناظر رأسي واحد</div></div>`,
+mj04p1q11: `<div class="svg-figure"><svg viewBox="0 0 220 200" width="210"><circle cx="110" cy="100" r="80" fill="none" stroke="#059669" stroke-width="1.5"/><circle cx="110" cy="100" r="2.5" fill="#111"/><text x="116" y="98" font-size="11">O</text><line x1="110" y1="100" x2="60" y2="35" stroke="#2563eb" stroke-width="1.5"/><line x1="110" y1="100" x2="175" y2="45" stroke="#2563eb" stroke-width="1.5"/><line x1="60" y1="35" x2="175" y2="45" stroke="#dc2626" stroke-width="1.5"/><text x="45" y="30" font-size="11">P</text><text x="180" y="42" font-size="11">Q</text><text x="65" y="55" font-size="9" fill="#dc2626">35°</text></svg><div class="svg-caption" data-cap-ar="س11: PQ وتر في دائرة مركزها O، الزاوية OPQ = 35°" data-cap-en="Q11: PQ is a chord of circle centre O, angle OPQ = 35°">س11: PQ وتر في دائرة مركزها O، الزاوية OPQ = 35°</div></div>`,
+mj04p1q15: `<div class="svg-figure"><svg viewBox="0 0 240 170" width="230"><polygon points="40,140 200,140 200,40" fill="#dbeafe" fill-opacity="0.4" stroke="#2563eb" stroke-width="2"/><rect x="188" y="128" width="12" height="12" fill="none" stroke="#2563eb"/><text x="28" y="155" font-size="12">B</text><text x="205" y="155" font-size="12">C</text><text x="205" y="35" font-size="12">A</text><path d="M 60 140 A 20 20 0 0 0 55 127" fill="none" stroke="#dc2626"/><text x="65" y="130" font-size="10" fill="#dc2626">32°</text><text x="115" y="155" font-size="10" fill="#059669">AC = 5 m</text></svg><div class="svg-caption" data-cap-ar="س15: مثلث قائم ABC — AC = 5م، الزاوية CAB = 32°" data-cap-en="Q15: Right triangle ABC — AC = 5m, angle CAB = 32°">س15: مثلث قائم ABC — AC = 5م، الزاوية CAB = 32°</div></div>`,
+mj04p1q17: `<div class="svg-figure"><svg viewBox="0 0 300 180" width="290"><line x1="40" y1="150" x2="280" y2="150" stroke="#374151" stroke-width="1.5"/><line x1="40" y1="150" x2="40" y2="20" stroke="#374151" stroke-width="1.5"/><rect x="60" y="94" width="40" height="56" fill="#3b82f6"/><rect x="115" y="67" width="40" height="83" fill="#dc2626"/><rect x="170" y="108" width="40" height="42" fill="#16a34a"/><rect x="225" y="24" width="40" height="126" fill="#d97706"/><text x="70" y="165" font-size="9">كرة سلة</text><text x="120" y="165" font-size="9">كرة قدم</text><text x="180" y="165" font-size="9">تنس</text><text x="230" y="165" font-size="9">طائرة</text><text x="10" y="30" font-size="9" fill="#6b7280">70</text><text x="10" y="98" font-size="9" fill="#6b7280">35</text></svg><div class="svg-caption" data-cap-ar="س17: مخطط شريطي — كرة السلة 40، كرة القدم 55، التنس 35، الكرة الطائرة 70" data-cap-en="Q17: Bar chart — Basketball 40, Football 55, Tennis 35, Volleyball 70">س17: مخطط شريطي — كرة السلة 40، كرة القدم 55، التنس 35، الكرة الطائرة 70</div></div>`,
+mj04p1q19: `<div class="svg-figure"><svg viewBox="0 0 220 200" width="180"><ellipse cx="110" cy="40" rx="60" ry="16" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="40" x2="50" y2="170" stroke="#2563eb" stroke-width="2"/><line x1="170" y1="40" x2="170" y2="170" stroke="#2563eb" stroke-width="2"/><ellipse cx="110" cy="170" rx="60" ry="16" fill="#93c5fd" fill-opacity="0.5" stroke="#2563eb" stroke-width="2"/><text x="115" y="45" font-size="10">r = 30 سم</text><text x="180" y="105" font-size="10" fill="#059669">80 سم</text></svg><div class="svg-caption" data-cap-ar="س19: خزان أسطواني — نصف القطر 30 سم، الارتفاع 80 سم" data-cap-en="Q19: Cylindrical tank — radius 30 cm, height 80 cm">س19: خزان أسطواني — نصف القطر 30 سم، الارتفاع 80 سم</div></div>`,
+mj04p2q8: `<div class="svg-figure"><svg viewBox="0 0 220 140" width="210"><rect x="40" y="25" width="140" height="90" fill="#dbeafe" fill-opacity="0.5" stroke="#2563eb" stroke-width="2"/><line x1="40" y1="70" x2="180" y2="70" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/><line x1="110" y1="25" x2="110" y2="115" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/></svg><div class="svg-caption" data-cap-ar="س8: شكل هندسي (يُفترض مستطيل) — خطا تناظر ورتبة دورانية 2" data-cap-en="Q8: Geometric shape (assumed rectangle) — 2 lines of symmetry, order 2">س8: شكل هندسي (يُفترض مستطيل) — خطا تناظر ورتبة دورانية 2</div></div>`,
+mj04p2q14: `<div class="svg-figure"><svg viewBox="0 0 240 180" width="230"><rect x="20" y="20" width="200" height="140" fill="#dcfce7" fill-opacity="0.4" stroke="#16a34a" stroke-width="2"/><circle cx="20" cy="20" r="3" fill="#111"/><text x="8" y="14" font-size="11">P</text><path d="M 20 20 A 90 90 0 0 1 110 110" fill="#bbf7d0" fill-opacity="0.6" stroke="#059669" stroke-width="2"/><text x="55" y="45" font-size="9" fill="#059669">4 م</text></svg><div class="svg-caption" data-cap-ar="س14: ماعز مربوط بحبل 4م عند الزاوية P — ربع دائرة" data-cap-en="Q14: Goat tied by a 4m rope at corner P — quarter circle">س14: ماعز مربوط بحبل 4م عند الزاوية P — ربع دائرة</div></div>`,
+mj04p2q15: `<div class="svg-figure"><svg viewBox="0 0 260 190" width="250"><polygon points="130,20 40,170 220,170" fill="#dbeafe" fill-opacity="0.3" stroke="#2563eb" stroke-width="2"/><line x1="75" y1="105" x2="185" y2="105" stroke="#dc2626" stroke-width="1.5"/><text x="125" y="15" font-size="11">A</text><text x="25" y="185" font-size="11">B</text><text x="225" y="185" font-size="11">C</text><text x="65" y="100" font-size="11">P</text><text x="188" y="100" font-size="11">Q</text><text x="95" y="150" font-size="9" fill="#1e40af">99 سم²</text><text x="120" y="90" font-size="9" fill="#dc2626">11 سم²</text><text x="145" y="118" font-size="9" fill="#059669">PQ=12</text></svg><div class="svg-caption" data-cap-ar="س15: مثلثان متشابهان — مساحة APQ=99، مساحة ABC=11، PQ=12" data-cap-en="Q15: Similar triangles — area APQ=99, area ABC=11, PQ=12">س15: مثلثان متشابهان — مساحة APQ=99، مساحة ABC=11، PQ=12</div></div>`,
+mj04p2q16: `<div class="svg-figure"><svg viewBox="0 0 260 170" width="250"><polygon points="30,140 100,140 170,30 100,30" fill="#dbeafe" fill-opacity="0.3" stroke="#2563eb" stroke-width="2"/><line x1="30" y1="140" x2="170" y2="30" stroke="#dc2626" stroke-width="1.5"/><circle cx="100" cy="85" r="2.5" fill="#111"/><text x="105" y="82" font-size="10">M</text><text x="15" y="155" font-size="11">O</text><text x="102" y="155" font-size="11">A</text><text x="175" y="28" font-size="11">B</text><text x="102" y="25" font-size="11">C</text><text x="55" y="145" font-size="9" fill="#1e40af">a</text><text x="130" y="25" font-size="9" fill="#dc2626">c</text></svg><div class="svg-caption" data-cap-ar="س16: متوازي أضلاع OABC — OA→=a، OC→=c، M منتصف CA" data-cap-en="Q16: Parallelogram OABC — OA→=a, OC→=c, M is midpoint of CA">س16: متوازي أضلاع OABC — OA→=a، OC→=c، M منتصف CA</div></div>`,
+mj04p2q18: `<div class="svg-figure"><svg viewBox="0 0 260 200" width="250"><circle cx="80" cy="30" r="3" fill="#111"/><text x="60" y="22" font-size="11">Rotterdam</text><circle cx="80" cy="30" r="3" fill="#2563eb"/><circle cx="80" cy="150" r="3" fill="#dc2626"/><text x="85" y="165" font-size="11">Antwerp</text><line x1="80" y1="30" x2="80" y2="150" stroke="#2563eb" stroke-width="1.5"/><text x="88" y="90" font-size="9" fill="#2563eb">78 كم</text><circle cx="200" cy="150" r="3" fill="#16a34a"/><text x="205" y="165" font-size="11">Bruges</text><line x1="80" y1="150" x2="200" y2="150" stroke="#16a34a" stroke-width="1.5"/><text x="120" y="145" font-size="9" fill="#16a34a">83 كم</text><line x1="80" y1="30" x2="200" y2="150" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="4,3"/></svg><div class="svg-caption" data-cap-ar="س18: أنتويرب 78 كم جنوب روتردام، و83 كم شرق بروج" data-cap-en="Q18: Antwerp is 78km south of Rotterdam, 83km east of Bruges">س18: أنتويرب 78 كم جنوب روتردام، و83 كم شرق بروج</div></div>`,
+mj04p3q1: `<div class="svg-figure"><svg viewBox="0 0 240 200" width="230"><circle cx="120" cy="100" r="80" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><path d="M 120 100 L 120 20 A 80 80 0 0 1 189 60 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/><path d="M 120 100 L 189 60 A 80 80 0 0 1 138 179 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/><path d="M 120 100 L 138 179 A 80 80 0 0 1 50 172 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M 120 100 L 50 172 A 80 80 0 0 1 120 20 Z" fill="#e9d5ff" stroke="#7c3aed" stroke-width="1.5"/><text x="150" y="45" font-size="10" fill="#1e40af">B 60°</text><text x="160" y="120" font-size="10" fill="#166534">C 160°</text><text x="85" y="160" font-size="9" fill="#991b1b">D 80°</text><text x="80" y="55" font-size="9" fill="#6d28d9">A/E</text></svg><div class="svg-caption" data-cap-ar="س1: مخطط دائري لتقديرات المدرسة — A=20°، B=60°، C=160°، D=80°، E=40°" data-cap-en="Q1: Pie chart of school grades — A=20°, B=60°, C=160°, D=80°, E=40°">س1: مخطط دائري لتقديرات المدرسة — A=20°، B=60°، C=160°، D=80°، E=40°</div></div>`,
+mj04p3q5: `<div class="svg-figure"><svg viewBox="0 0 260 200" width="250"><circle cx="120" cy="100" r="70" fill="none" stroke="#059669" stroke-width="1.5"/><circle cx="120" cy="100" r="2.5" fill="#111"/><text x="126" y="98" font-size="11">C</text><circle cx="120" cy="30" r="3" fill="#2563eb"/><text x="126" y="25" font-size="11">Q</text><line x1="120" y1="100" x2="120" y2="10" stroke="#2563eb" stroke-width="1.5"/><text x="80" y="8" font-size="10" fill="#dc2626">P</text><circle cx="120" cy="10" r="3" fill="#dc2626"/><circle cx="185" cy="65" r="3" fill="#16a34a"/><text x="192" y="63" font-size="11">S</text><line x1="120" y1="100" x2="185" y2="65" stroke="#059669" stroke-width="1.2" stroke-dasharray="3,2"/><line x1="120" y1="10" x2="185" y2="65" stroke="#16a34a" stroke-width="1.5"/></svg><div class="svg-caption" data-cap-ar="س5: CQ ممتد لـ P بمقدار 200م، PS مماس للدائرة عند S" data-cap-en="Q5: CQ extended to P by 200m, PS tangent to circle at S">س5: CQ ممتد لـ P بمقدار 200م، PS مماس للدائرة عند S</div></div>`,
+mj04p3q7: `<div class="svg-figure"><svg viewBox="0 0 260 220" width="250"><circle cx="60" cy="180" r="2.5" fill="#111"/><text x="45" y="195" font-size="11">A</text><line x1="60" y1="180" x2="60" y2="120" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,2"/><line x1="60" y1="180" x2="130" y2="110" stroke="#2563eb" stroke-width="1.5"/><circle cx="130" cy="110" r="2.5" fill="#2563eb"/><text x="136" y="108" font-size="11">B</text><path d="M 60 160 A 20 20 0 0 1 76 148" fill="none" stroke="#dc2626"/><text x="66" y="150" font-size="9" fill="#dc2626">070°</text><line x1="130" y1="110" x2="130" y2="50" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,2"/><line x1="130" y1="110" x2="215" y2="180" stroke="#16a34a" stroke-width="1.5"/><circle cx="215" cy="180" r="2.5" fill="#16a34a"/><text x="221" y="185" font-size="11">C</text><path d="M 130 90 A 20 20 0 0 1 143 76" fill="none" stroke="#dc2626"/><text x="133" y="72" font-size="9" fill="#dc2626">160°</text><text x="90" y="150" font-size="9" fill="#1e40af">100 كم</text><text x="180" y="150" font-size="9" fill="#166534">120 كم</text></svg><div class="svg-caption" data-cap-ar="س7: سفينة تبحر 100 كم باتجاه 070° إلى B، ثم 120 كم باتجاه 160° إلى C" data-cap-en="Q7: A ship sails 100km on bearing 070° to B, then 120km on bearing 160° to C">س7: سفينة تبحر 100 كم باتجاه 070° إلى B، ثم 120 كم باتجاه 160° إلى C</div></div>`,
+mj04p3q9: `<div class="svg-figure"><svg viewBox="0 0 300 130" width="290"><g stroke="#2563eb" stroke-width="1.5" fill="none"><rect x="20" y="30" width="40" height="40"/><rect x="90" y="30" width="40" height="40"/><rect x="130" y="30" width="40" height="40"/><rect x="200" y="30" width="40" height="40"/><rect x="240" y="30" width="40" height="40"/><rect x="280" y="30" width="40" height="40"/></g><g fill="#dc2626"><circle cx="20" cy="30" r="3"/><circle cx="60" cy="30" r="3"/><circle cx="20" cy="70" r="3"/><circle cx="60" cy="70" r="3"/></g><text x="30" y="90" font-size="9">1 مربع = 4 نقاط</text><g fill="#dc2626"><circle cx="90" cy="30" r="3"/><circle cx="130" cy="30" r="3"/><circle cx="170" cy="30" r="3"/><circle cx="90" cy="70" r="3"/><circle cx="130" cy="70" r="3"/><circle cx="170" cy="70" r="3"/></g><text x="105" y="90" font-size="9">2 مربع = 6 نقاط</text><g fill="#dc2626"><circle cx="200" cy="30" r="3"/><circle cx="240" cy="30" r="3"/><circle cx="280" cy="30" r="3"/><circle cx="320" cy="30" r="3"/><circle cx="200" cy="70" r="3"/><circle cx="240" cy="70" r="3"/><circle cx="280" cy="70" r="3"/><circle cx="320" cy="70" r="3"/></g><text x="220" y="90" font-size="9">3 مربعات = 8 نقاط</text></svg><div class="svg-caption" data-cap-ar="س9: متتالية نقاط ومربعات متجاورة" data-cap-en="Q9: Sequence of adjoining squares and dots">س9: متتالية نقاط ومربعات متجاورة</div></div>`,
+mj04p4q4: `<div class="svg-figure"><svg viewBox="0 0 260 220" width="250"><circle cx="130" cy="110" r="90" fill="none" stroke="#059669" stroke-width="1" stroke-dasharray="4,3"/><polygon points="70,60 200,90 150,190 55,150" fill="#dbeafe" fill-opacity="0.3" stroke="#2563eb" stroke-width="2"/><line x1="70" y1="60" x2="150" y2="190" stroke="#7c3aed" stroke-width="1.5"/><text x="55" y="52" font-size="12">A</text><text x="206" y="88" font-size="12">B</text><text x="155" y="200" font-size="12">D</text><text x="40" y="152" font-size="12">C</text><text x="120" y="72" font-size="9" fill="#dc2626">70°</text><text x="90" y="110" font-size="9" fill="#1e40af">9.5</text><text x="175" y="140" font-size="9" fill="#1e40af">11.1</text><text x="75" y="100" font-size="9" fill="#166534">37°</text></svg><div class="svg-caption" data-cap-ar="س4: رباعي دائري ABCD — AB=9.5سم، BC=11.1سم، الزاوية ABC=70°، CAD=37°" data-cap-en="Q4: Cyclic quadrilateral ABCD — AB=9.5cm, BC=11.1cm, angle ABC=70°, CAD=37°">س4: رباعي دائري ABCD — AB=9.5سم، BC=11.1سم، الزاوية ABC=70°، CAD=37°</div></div>`,
+mj04p4q6: `<div class="svg-figure"><svg viewBox="0 0 220 220" width="200"><path d="M 60 100 A 60 60 0 0 1 180 100" fill="#bfdbfe" fill-opacity="0.5" stroke="#2563eb" stroke-width="2"/><line x1="60" y1="100" x2="180" y2="100" stroke="#2563eb" stroke-width="2"/><polygon points="60,100 180,100 120,210" fill="#fef3c7" fill-opacity="0.6" stroke="#d97706" stroke-width="2"/><text x="85" y="95" font-size="10" fill="#1e40af">r = 7 سم</text><text x="125" y="160" font-size="10" fill="#92400e">h = 13 سم</text></svg><div class="svg-caption" data-cap-ar="س6: مجسم من نصف كرة ومخروط — نصف القطر 7 سم، ارتفاع المخروط 13 سم" data-cap-en="Q6: Solid of hemisphere + cone — radius 7cm, cone height 13cm">س6: مجسم من نصف كرة ومخروط — نصف القطر 7 سم، ارتفاع المخروط 13 سم</div></div>`,
+mj04p4q7: `<div class="svg-figure"><svg viewBox="0 0 260 180" width="250"><rect x="20" y="20" width="220" height="140" fill="none" stroke="#374151" stroke-width="1.5"/><circle cx="110" cy="90" r="60" fill="#bfdbfe" fill-opacity="0.4" stroke="#2563eb" stroke-width="1.5"/><circle cx="170" cy="90" r="55" fill="#fecaca" fill-opacity="0.4" stroke="#dc2626" stroke-width="1.5"/><text x="70" y="60" font-size="11" fill="#1e40af">فيزياء</text><text x="185" y="60" font-size="11" fill="#991b1b">كيمياء</text><text x="30" y="35" font-size="9" fill="#6b7280">الكل = 30، لا شيء = 3</text></svg><div class="svg-caption" data-cap-ar="س7: مخطط فين — 30 طالباً، فيزياء 20، كيمياء 15، لا شيء 3" data-cap-en="Q7: Venn diagram — 30 students, Physics 20, Chemistry 15, neither 3">س7: مخطط فين — 30 طالباً، فيزياء 20، كيمياء 15، لا شيء 3</div></div>`
+};
+
+/* ══════════════ TRANSLATIONS ══════════════ */
+const T = {
+time_label:{ar:'⏱️ الوقت:',en:'⏱️ Time:'},
+st_papers:{ar:'أوراق امتحانية',en:'Exam Papers'},
+st_questions:{ar:'سؤال',en:'Questions'},
+st_minutes:{ar:'دقيقة',en:'Minutes'},
+st_session:{ar:'الدورة',en:'Session'},
+btn_toggle:{ar:'👁️ إظهار/إخفاء الإجابات',en:'👁️ Show/Hide Answers'},
+btn_print:{ar:'🖨️ طباعة',en:'🖨️ Print'},
+btn_expand:{ar:'📂 فتح الكل',en:'📂 Expand All'},
+btn_collapse:{ar:'📁 طي الكل',en:'📁 Collapse All'},
+btn_submit:{ar:'📝 تسليم وتصحيح الامتحان',en:'📝 Submit & Grade Exam'},
+h_title:{ar:'📐 امتحان Cambridge IGCSE Mathematics (0580) — مايو/يونيو 2004',en:'📐 Cambridge IGCSE Mathematics (0580) Exam — May/June 2004'},
+h_sub:{ar:'جميع الأوراق (الأساسي والمتقدم)',en:'All Papers (Core & Extended)'},
+h_papers:{ar:'Papers 1, 2, 3 (أساسي), 4 (متقدم)',en:'Papers 1, 2, 3 (Core), 4 (Extended)'},
+h_warn:{ar:'⚠️ 4 أوراق امتحانية — 61 سؤالاً رئيسياً — مع الرسومات التوضيحية',en:'⚠️ 4 Papers — 61 main questions — with diagrams'},
+ph_name:{ar:'الاسم',en:'Name'},
+ph_class:{ar:'الشعبة',en:'Class'},
+ph_date:{ar:'التاريخ',en:'Date'},
+res_title:{ar:'📊 نتائج الامتحان',en:'📊 Exam Results'},
+rl_name:{ar:'اسم الطالب',en:'Student Name'},
+rl_date:{ar:'التاريخ',en:'Date'},
+rl_total:{ar:'المجموع',en:'Total'},
+rl_rate:{ar:'نسبة النجاح',en:'Success Rate'},
+rl_perf:{ar:'📈 تفصيل الأداء حسب الورقة:',en:'📈 Performance by Paper:'},
+btn_printres:{ar:'🖨️ طباعة النتائج',en:'🖨️ Print Results'},
+sidebar_title:{ar:'📑 فهرس الأوراق',en:'📑 Papers Index'},
+marks:{ar:'درجة',en:'marks'},
+answer_ph:{ar:'اكتب الإجابة هنا...',en:'Type answer here...'},
+q_word:{ar:'السؤال',en:'Question'},
+questions_word:{ar:'سؤال',en:'Questions'},
+grade_excellent:{ar:'ممتاز 🌟',en:'Excellent 🌟'},
+grade_good:{ar:'جيد جداً 👍',en:'Very Good 👍'},
+grade_pass:{ar:'جيد ✓',en:'Good ✓'},
+grade_fail:{ar:'يحتاج تحسين 📚',en:'Needs Improvement 📚'},
+timeup:{ar:'انتهى الوقت!',en:"Time's up!"},
+student_default:{ar:'طالب',en:'Student'},
+core:{ar:'أساسي',en:'Core'},
+extended:{ar:'متقدم',en:'Extended'}
+};
+
+/* ══════════════ EXAM DATA (ثنائي اللغة) ══════════════ */
+const examData=[
+/* ═══════ PAPER 1 — ساعة واحدة — 56 درجة ═══════ */
+{id:'p1',title:{ar:'📘 الورقة 1',en:'📘 Paper 1'},tier:'core',color:'#2563eb',code:{ar:'الورقة 1 — مايو/يونيو 2004 — ساعة واحدة — 56 درجة',en:'Paper 1 — May/June 2004 — 1 hour — 56 marks'},questions:[
+{q:{ar:'احسب: 43 − 52.',en:'Calculate: 43 − 52.'},m:1,a:'-9',e:{ar:'−9',en:'−9'}},
+{q:{ar:'يقع ساحل البحر الميت على ارتفاع 395 متراً تحت مستوى سطح البحر، وتقع مدينة الخليل على ارتفاع 447 متراً فوق مستوى سطح البحر. أوجد الفرق في الارتفاع بينهما.',en:'The Dead Sea coast is 395 m below sea level. Hebron is 447 m above sea level. Find the difference in height between them.'},m:1,a:'842',e:{ar:'842 متراً (447 − (−395))',en:'842 metres (447 − (−395))'}},
+{q:{ar:'اكتب ككسر في أبسط صورة: (أ) 75% (ب) 0.07.',en:'Write as a fraction in simplest form: (a) 75% (b) 0.07.'},m:2,a:'3/4,7/100',e:{ar:'(أ) 3/4 | (ب) 7/100',en:'(a) 3/4 | (b) 7/100'}},
+{q:{ar:'من الأعداد التالية: 21, 35, 49, 31, 24، اكتب: (أ) عدداً مربعاً (ب) عدداً أولياً.',en:'From the numbers 21, 35, 49, 31, 24, write: (a) a square number (b) a prime number.'},m:2,a:'49,31',e:{ar:'(أ) 49 | (ب) 31',en:'(a) 49 | (b) 31'}},
+{q:{ar:'نموذج سيارة بمقياس رسم 1:25. طول النموذج 18 سم. احسب الطول الفعلي للسيارة بوحدة المتر.',en:'A model car has scale 1:25. The model length is 18 cm. Calculate the actual length of the car in metres.'},m:2,a:'4.5',e:{ar:'4.5 أمتار (18 × 25 = 450 سم)',en:'4.5 metres (18 × 25 = 450 cm)'}},
+{q:{ar:'بدون استخدام الآلة الحاسبة، احسب 2¼ − ½ على شكل كسر واحد (أظهر جميع خطوات عملك).',en:'Without using a calculator, calculate 2¼ − ½ as a single fraction (show all your working).'},m:2,a:'7/4',e:{ar:'7/4 أو 1¾ (9/4 − 2/4 = 7/4)',en:'7/4 or 1¾ (9/4 − 2/4 = 7/4)'}},
+{q:{ar:'طول سيرجيو هو 142 سم، مقرباً إلى أقرب سنتيمتر. أكمل: ............. سم ≤ الطول < ............. سم.',en:"Sergio's height is 142 cm, to the nearest centimetre. Complete: ............. cm ≤ height < ............. cm."},m:2,a:'141.5,142.5',e:{ar:'141.5 ≤ الطول < 142.5',en:'141.5 ≤ height < 142.5'}},
+{q:{ar:'حلل المقدار التالي تحليلاً كاملاً: 4xy − 6xz.',en:'Factorise completely: 4xy − 6xz.'},m:2,a:'2x(2y-3z)',e:{ar:'2x(2y − 3z)',en:'2x(2y − 3z)'}},
+{q:{ar:'صرفت أليكس شيك سفر بقيمة 200 يورو (€) إلى دولارات ($) عندما زارت الولايات المتحدة. كان سعر الصرف: 1$ = 1.05€. كم دولاراً تلقت؟',en:"Alex changed a €200 traveller's cheque to dollars while visiting the USA. The exchange rate was $1 = €1.05. How many dollars did she receive?"},m:2,a:'190.48',e:{ar:'190.48$ (200 ÷ 1.05)',en:'$190.48 (200 ÷ 1.05)'}},
+{q:{ar:'بالنسبة للشكل الموضح (طائرة ورقية Kite)، اكتب: (أ) عدد خطوط التناظر (ب) رتبة التناظر الدوراني.',en:'For the shape shown (a Kite), write: (a) the number of lines of symmetry (b) the order of rotational symmetry.'},m:2,a:'1,1',svg:'mj04p1q10',e:{ar:'(أ) 1 | (ب) 1',en:'(a) 1 | (b) 1'}},
+{q:{ar:'PQ وتر في دائرة مركزها O. قياس الزاوية OPQ = 35°. احسب قياس الزاوية POQ.',en:'PQ is a chord of a circle, centre O. Angle OPQ = 35°. Calculate angle POQ.'},m:2,a:'110',svg:'mj04p1q11',e:{ar:'110° (المثلث OPQ متساوي الساقين، الزاوية OQP = 35°، فالزاوية POQ = 180 − 70 = 110°)',en:'110° (triangle OPQ is isosceles, angle OQP = 35°, so angle POQ = 180 − 70 = 110°)'}},
+{q:{ar:'(أ) إذا كان ½ = 1/x، اكتب قيمة x. (ب) إذا كان 1/7 = y، اكتب قيمة y.',en:'(a) If ½ = 1/x, write the value of x. (b) If 1/7 = y, write the value of y.'},m:2,a:'2,1/7',e:{ar:'(أ) x = 2 | (ب) y = 1/7',en:'(a) x = 2 | (b) y = 1/7'}},
+{q:{ar:'العملية الحسابية هي: 218 ÷ 39. (أ)(1) اكتب كلا العددين مقربين إلى رقم معنوي واحد. (2) استخدم إجابتك لتقدير قيمة العملية. (ب) استخدم الآلة الحاسبة لإيجاد القيمة مقربة إلى رقمين معنويين.',en:'The calculation is 218 ÷ 39. (a)(1) Write both numbers rounded to 1 significant figure. (2) Use your answer to estimate the calculation. (b) Use a calculator to find the value correct to 2 significant figures.'},m:3,a:'200,40,5,5.6',e:{ar:'(أ-1) 200 و 40 | (أ-2) 5 (200 ÷ 40) | (ب) 5.6 (218 ÷ 39 = 5.589...)',en:'(a-1) 200 and 40 | (a-2) 5 (200 ÷ 40) | (b) 5.6 (218 ÷ 39 = 5.589...)'}},
+{q:{ar:'يُباع الشامبو بحجمين، A و B: الحجم A يحتوي 800 مل ويكلف 1.30$. الحجم B يحتوي 1.5 لتر ويكلف 2.30$. أي الحجمين يمثل قيمة أفضل مقابل المال؟ (أظهر خطوات عملك بوضوح).',en:'Shampoo is sold in two sizes, A and B: Size A contains 800 ml and costs $1.30. Size B contains 1.5 litres and costs $2.30. Which size represents better value for money? (Show your working clearly).'},m:3,a:'B',e:{ar:'الحجم B أفضل (A: 1.30÷800=0.001625$/مل | B: 2.30÷1500=0.001533$/مل)',en:'Size B is better value (A: 1.30÷800=$0.001625/ml | B: 2.30÷1500=$0.001533/ml)'}},
+{q:{ar:'في المثلث القائم الزاوية ABC، AC = 5 أمتار وقياس الزاوية CAB = 32°. احسب طول الضلع BC.',en:'In right-angled triangle ABC, AC = 5 metres and angle CAB = 32°. Calculate the length of side BC.'},m:3,a:'2.65',svg:'mj04p1q15',e:{ar:'2.65 متراً (5 × sin 32°)',en:'2.65 metres (5 × sin 32°)'}},
+{q:{ar:'لديك الصيغة: y = a − bc. (أ) أوجد قيمة y عندما a = −3، b = 2، c = 8. (ب) اجعل c موضوعاً للصيغة.',en:'You have the formula y = a − bc. (a) Find the value of y when a = −3, b = 2, c = 8. (b) Make c the subject of the formula.'},m:4,a:'-19,c=(a-y)/b',e:{ar:'(أ) −19 (−3 − (2×8)) | (ب) c = (a − y) / b',en:'(a) −19 (−3 − (2×8)) | (b) c = (a − y) / b'}},
+{q:{ar:'يوضح الجدول عدد الطلاب في رياضات مختلفة: كرة السلة 40، كرة القدم 55، التنس 35، الكرة الطائرة 70. ارسم مخططاً شريطياً لإظهار هذه البيانات (أظهر مقياسك على المحور الرأسي وسمِّ الأعمدة).',en:'The table shows the number of students in different sports: Basketball 40, Football 55, Tennis 35, Volleyball 70. Draw a bar chart to show this data (show your scale on the vertical axis and label the bars).'},m:4,a:'shown',svg:'mj04p1q17',e:{ar:'رسم شريطي بارتفاعات 40، 55، 35، 70 مع تسمية المحور الرأسي "عدد الطلاب"',en:'Bar chart with heights 40, 55, 35, 70, vertical axis labelled "Number of students"'}},
+{q:{ar:'اشترى كارلوس صندوقاً يحتوي على 50 برتقالة مقابل 8$. باع جميع البرتقال في السوق بسعر 25 سنتاً للبرتقالة الواحدة. (أ) احسب الربح الذي حققه بالدولار. (ب) احسب النسبة المئوية للربح على سعر التكلفة.',en:'Carlos bought a box of 50 oranges for $8. He sold all the oranges in the market at 25 cents each. (a) Calculate the profit he made in dollars. (b) Calculate the percentage profit on the cost price.'},m:4,a:'4.50,56.25',e:{ar:'(أ) 4.50$ (الإيرادات 50 × 0.25 = 12.50$، الربح = 12.50 − 8) | (ب) 56.25% ((4.50 ÷ 8) × 100)',en:'(a) $4.50 (revenue 50 × 0.25 = $12.50, profit = 12.50 − 8) | (b) 56.25% ((4.50 ÷ 8) × 100)'}},
+{q:{ar:'يوضح الرسم خزاناً أسطوانياً نصف قطر قاعدته 30 سم وارتفاعه 80 سم. (أ) احسب مساحة قاعدة الخزان. (ب) احسب حجم الخزان بوحدة اللتر.',en:'The diagram shows a cylindrical tank with base radius 30 cm and height 80 cm. (a) Calculate the area of the base of the tank. (b) Calculate the volume of the tank in litres.'},m:4,a:'2827.4,226.2',svg:'mj04p1q19',e:{ar:'(أ) 2827.4 سم² (π × 30²) | (ب) 226.2 لتراً (2827.4 × 80 ÷ 1000)',en:'(a) 2827.4 cm² (π × 30²) | (b) 226.2 litres (2827.4 × 80 ÷ 1000)'}},
+{q:{ar:'حل المعادلتين التاليتين: (أ) 4x + 5 = 31 (ب) 4(y − 5) = 36.',en:'Solve the following equations: (a) 4x + 5 = 31 (b) 4(y − 5) = 36.'},m:4,a:'6.5,14',e:{ar:'(أ) x = 6.5 (4x = 26) | (ب) y = 14 (y − 5 = 9)',en:'(a) x = 6.5 (4x = 26) | (b) y = 14 (y − 5 = 9)'}},
+{q:{ar:'التوقيت في دبي يسبق توقيت برمنغهام بـ 3 ساعات. (أ) إذا كانت الساعة 21:15 يوم الأحد في برمنغهام، فكم الساعة يوم الاثنين في دبي؟ (ب) غادرت طائرة برمنغهام الساعة 21:15 يوم الأحد ووصلت إلى دبي يوم الاثنين الساعة 07:45 بالتوقيت المحلي. (1) كم استغرقت الرحلة (بالساعات والدقائق)؟ (2) المسافة من برمنغهام إلى دبي 5620 كم. احسب متوسط سرعة الطائرة بوحدة كم/ساعة.',en:'Dubai time is 3 hours ahead of Birmingham time. (a) If it is 21:15 on Sunday in Birmingham, what time is it on Monday in Dubai? (b) A plane left Birmingham at 21:15 on Sunday and arrived in Dubai at 07:45 on Monday, local time. (1) How long did the flight take (in hours and minutes)? (2) The distance from Birmingham to Dubai is 5620 km. Calculate the average speed of the plane in km/h.'},m:5,a:'00:15,10h30,535',e:{ar:'(أ) 00:15 يوم الاثنين | (ب-1) 10 ساعات و30 دقيقة | (ب-2) 535 كم/ساعة (5620 ÷ 10.5)',en:'(a) 00:15 on Monday | (b-1) 10 hours 30 minutes | (b-2) 535 km/h (5620 ÷ 10.5)'}}
+]},
+/* ═══════ PAPER 2 — ساعة ونصف — 70 درجة ═══════ */
+{id:'p2',title:{ar:'📕 الورقة 2',en:'📕 Paper 2'},tier:'extended',color:'#dc2626',code:{ar:'الورقة 2 — مايو/يونيو 2004 — ساعة ونصف — 70 درجة',en:'Paper 2 — May/June 2004 — 1.5 hours — 70 marks'},questions:[
+{q:{ar:'غادر قطار مدينة سيدني الساعة 23:20 يوم 18 ديسمبر، ووصل إلى بريزبان الساعة 02:40 يوم 19 ديسمبر. كم استغرقت الرحلة من الوقت (بالساعات والدقائق)؟',en:'A train left Sydney at 23:20 on 18 December and arrived in Brisbane at 02:40 on 19 December. How long did the journey take (in hours and minutes)?'},m:1,a:'3h20',e:{ar:'3 ساعات و20 دقيقة',en:'3 hours 20 minutes'}},
+{q:{ar:'باستخدام الآلة الحاسبة، أوجد قيمة المقدار: 6 sin 50° ÷ sin 25°.',en:'Using a calculator, find the value of: 6 sin 50° ÷ sin 25°.'},m:1,a:'10.9',e:{ar:'10.9 (أو 10.8756...) — باستخدام sin50°=2sin25°cos25° يختصر المقدار إلى 12cos25°',en:'10.9 (or 10.8756...) — using sin50°=2sin25°cos25°, the expression simplifies to 12cos25°'}},
+{q:{ar:'رتب الأعداد التالية تصاعدياً (من الأصغر إلى الأكبر): 0.52 ، 0.5² ، 0.53.',en:'Order the following numbers ascending (smallest to largest): 0.52, 0.5², 0.53.'},m:2,a:'0.5^2,0.52,0.53',e:{ar:'0.5² < 0.52 < 0.53 (لأن 0.5² = 0.25)',en:'0.5² < 0.52 < 0.53 (since 0.5² = 0.25)'}},
+{q:{ar:'بسط المقدار الجبري التالي: (2p³/3q²) × (12q²/8p³).',en:'Simplify the following algebraic expression: (2p³/3q²) × (12q²/8p³).'},m:2,a:'1',e:{ar:'1 (تختصر جميع الحدود)',en:'1 (all terms cancel)'}},
+{q:{ar:'حل المعادلة: 4 − 2x = 8.',en:'Solve the equation: 4 − 2x = 8.'},m:2,a:'-2',e:{ar:'x = −2 (−2x = 8 − 4 ⇒ −2x = 4 ⇒ x = −2)',en:'x = −2 (−2x = 8 − 4 ⇒ −2x = 4 ⇒ x = −2)'}},
+{q:{ar:'يبلغ عدد سكان جزيرة صغيرة P = 6380 نسمة، مقرباً إلى أقرب 10 أشخاص. أكمل المتباينة: ............. ≤ P < .............',en:"A small island's population is P = 6380, to the nearest 10 people. Complete: ............. ≤ P < ............."},m:2,a:'6375,6385',e:{ar:'6375 ≤ P < 6385',en:'6375 ≤ P < 6385'}},
+{q:{ar:'احسب قيمة المقدار التالي: (1³ + 2³) ÷ (1³ − 2³).',en:'Calculate the value of: (1³ + 2³) ÷ (1³ − 2³).'},m:2,a:'-9/7',e:{ar:'−9/7 (البسط 1+8=9، المقام 1−8=−7)',en:'−9/7 (numerator 1+8=9, denominator 1−8=−7)'}},
+{q:{ar:'بالنسبة للشكل الهندسي المرفق (ولنفترض أنه مستطيل)، اكتب: (أ) عدد خطوط التناظر (ب) رتبة التناظر الدوراني.',en:'For the attached geometric shape (assume it is a rectangle), write: (a) the number of lines of symmetry (b) the order of rotational symmetry.'},m:2,a:'2,2',svg:'mj04p2q8',e:{ar:'(أ) 2 | (ب) 2',en:'(a) 2 | (b) 2'}},
+{q:{ar:'تملك سارة مبلغ 3000$ لاستثماره لمدة سنتين، تستثمر المال في بنك يدفع فائدة بسيطة بنسبة 7.5% سنوياً. احسب مقدار الفائدة التي ستحصل عليها في نهاية السنتين.',en:'Sarah has $3000 to invest for two years. She invests the money in a bank paying simple interest at 7.5% per year. Calculate the interest she will receive at the end of the two years.'},m:2,a:'450',e:{ar:'450$ (I = 3000 × 7.5 × 2 ÷ 100)',en:'$450 (I = 3000 × 7.5 × 2 ÷ 100)'}},
+{q:{ar:'تبلغ مساحة دولة صغيرة 78,133 كيلومتراً مربعاً. (أ) اكتب هذه المساحة مقربة إلى رقم معنوي واحد. (ب) اكتب إجابتك في الجزء (أ) على شكل صيغة علمية.',en:"A small country's area is 78,133 square kilometres. (a) Write this area to 1 significant figure. (b) Write your answer to part (a) in standard form."},m:2,a:'80000,8*10^4',e:{ar:'(أ) 80,000 | (ب) 8 × 10⁴',en:'(a) 80,000 | (b) 8 × 10⁴'}},
+{q:{ar:'حل المعادلتين آنياً: 2x + y = 5 و x − 2y = 6.',en:'Solve simultaneously: 2x + y = 5 and x − 2y = 6.'},m:3,a:'3.2,-1.4',e:{ar:'x = 3.2، y = −1.4',en:'x = 3.2, y = −1.4'}},
+{q:{ar:'يوضح المخطط الدائري المرفق أعداد السكان في دول المملكة المتحدة الأربع لعام 2000 (باستخدام المنقلة لقياس زوايا القطاعات وحساب النسب من إجمالي السكان المعطى في الامتحان)، أكمل الجدول الخاص بأعداد السكان بالملايين.',en:'The attached pie chart shows the 2000 populations of the four countries of the United Kingdom. (Using a protractor to measure the sector angles, and the total population given in the exam paper), complete the table of populations in millions.'},m:3,a:'shown',e:{ar:'تُقاس زوايا القطاعات بالمنقلة وتُحسب النسب من إجمالي السكان المعطى في نص الامتحان الأصلي',en:'Sector angles are measured with a protractor and proportions calculated from the total population given in the original exam paper'}},
+{q:{ar:'اجعل d موضوعاً للصيغة: c = √(2d + e).',en:'Make d the subject of the formula: c = √(2d + e).'},m:3,a:'d=(c^2-e)/2',e:{ar:'d = (c² − e) / 2',en:'d = (c² − e) / 2'}},
+{q:{ar:'يوضح الرسم حديقة تتكون من ممر وعشب. ماعز مربوط بحبل طوله 4 أمتار في العمود عند النقطة P. (أ) ارسم المحل الهندسي لجميع النقاط في الحديقة التي يمكن للماعز الوصول إليها عندما يكون الحبل مشدوداً. (ب) احسب مساحة العشب التي يمكن للماعز أكلها.',en:'The diagram shows a garden consisting of a path and grass. A goat is tied by a 4-metre rope to a post at point P. (a) Draw the locus of all points in the garden the goat can reach when the rope is taut. (b) Calculate the area of grass the goat can eat.'},m:3,a:'12.6',svg:'mj04p2q14',e:{ar:'12.6 م² تقريباً (ربع دائرة: ¼ × π × 4² = 4π ≈ 12.57)',en:'≈12.6 m² (quarter circle: ¼ × π × 4² = 4π ≈ 12.57)'}},
+{q:{ar:'في الشكل المرفق، مساحة المثلث APQ = 99 سم²، ومساحة المثلث ABC = 11 سم². الضلع BC يوازي الضلع PQ، وطول PQ = 12 سم. احسب طول الضلع BC.',en:'In the attached diagram, the area of triangle APQ = 99 cm², and the area of triangle ABC = 11 cm². Side BC is parallel to side PQ, and PQ = 12 cm. Calculate the length of side BC.'},m:3,a:'4',svg:'mj04p2q15',e:{ar:'4 سم (99/11=(12/BC)² ⇒ 9=(12/BC)² ⇒ 3=12/BC ⇒ BC=4)',en:'4 cm (99/11=(12/BC)² ⇒ 9=(12/BC)² ⇒ 3=12/BC ⇒ BC=4)'}},
+{q:{ar:'OABC متوازي أضلاع. المتجه OA→ = a والمتجه OC→ = c. النقطة M هي نقطة منتصف الخط CA. أوجد بدلالة a و c: (أ) المتجه OB→ (ب) المتجه OM→ (ج) المتجه BM→.',en:'OABC is a parallelogram. Vector OA→ = a and vector OC→ = c. Point M is the midpoint of line CA. Find in terms of a and c: (a) vector OB→ (b) vector OM→ (c) vector BM→.'},m:4,a:'a+c,0.5a+0.5c,-0.5a-0.5c',svg:'mj04p2q16',e:{ar:'(أ) a + c | (ب) ½a + ½c | (ج) −½a − ½c',en:'(a) a + c | (b) ½a + ½c | (c) −½a − ½c'}},
+{q:{ar:'في الشكل الرباعي ABCD المرفق: (أ) باستخدام المسطرة والفرجار فقط، أنشئ: (1) المنصف العمودي للخط BD (2) منصف الزاوية CDA. (ب) ظلل المنطقة الواقعة داخل الشكل الرباعي والتي تكون أقرب إلى D منها إلى B، وتكون أقرب إلى الضلع DC منها إلى الضلع DA.',en:'In the attached quadrilateral ABCD: (a) Using ruler and compasses only, construct: (1) the perpendicular bisector of line BD (2) the bisector of angle CDA. (b) Shade the region inside the quadrilateral that is nearer to D than to B, and nearer to side DC than to side DA.'},m:5,a:'shown',e:{ar:'إنشاءات هندسية دقيقة: المنصف العمودي لـ BD ومنصف الزاوية CDA، ثم تظليل منطقة التقاطع',en:'Accurate geometric constructions: perpendicular bisector of BD and bisector of angle CDA, then shade the overlap region'}},
+{q:{ar:'تقع مدينة أنتويرب على بعد 78 كم تماماً جنوب مدينة روتردام، وعلى بعد 83 كم تماماً شرق مدينة بروج. احسب: (أ) المسافة بين مدينتي بروج وروتردام. (ب) اتجاه مدينة روتردام من مدينة بروج، مقرباً إلى أقرب درجة.',en:'Antwerp is exactly 78 km south of Rotterdam, and exactly 83 km east of Bruges. Calculate: (a) the distance between Bruges and Rotterdam. (b) the bearing of Rotterdam from Bruges, to the nearest degree.'},m:5,a:'113.9,133',svg:'mj04p2q18',e:{ar:'(أ) 113.9 كم (فيثاغورس: √(78²+83²)) | (ب) 133° (90° + tan⁻¹(78/83) ≈ 90+43.1)',en:'(a) 113.9 km (Pythagoras: √(78²+83²)) | (b) 133° (90° + tan⁻¹(78/83) ≈ 90+43.1)'}},
+{q:{ar:'لديك الدالتان: f(x) = 2x − 1 و g(x) = x² − 1. (أ) أوجد قيمة fg(9). (ب) أوجد الدالة المركبة fg(x) في أبسط صورة. (ج) أوجد الدالة العكسية g⁻¹(x).',en:'You have the functions: f(x) = 2x − 1 and g(x) = x² − 1. (a) Find the value of fg(9). (b) Find the composite function fg(x) in its simplest form. (c) Find the inverse function g⁻¹(x).'},m:5,a:'159,2x^2-3,sqrt(x+1)',e:{ar:'(أ) 159 (g(9)=80، f(80)=159) | (ب) 2x² − 3 | (ج) g⁻¹(x) = √(x + 1)',en:'(a) 159 (g(9)=80, f(80)=159) | (b) 2x² − 3 | (c) g⁻¹(x) = √(x + 1)'}},
+{q:{ar:'(أ) حلل تحليلاً كاملاً: 12x² − 3y². (ب)(1) فك القوس: (x − 3)². (2) اكتب المقدار x² − 6x + 10 على الصورة (x − p)² + q. أوجد قيمتي p و q.',en:'(a) Factorise completely: 12x² − 3y². (b)(1) Expand: (x − 3)². (2) Write x² − 6x + 10 in the form (x − p)² + q. Find the values of p and q.'},m:6,a:'3(2x-y)(2x+y),x^2-6x+9,p=3,q=1',e:{ar:'(أ) 3(2x − y)(2x + y) | (ب-1) x² − 6x + 9 | (ب-2) p = 3، q = 1',en:'(a) 3(2x − y)(2x + y) | (b-1) x² − 6x + 9 | (b-2) p = 3, q = 1'}},
+{q:{ar:'(يعتمد على رسم بياني للسرعة والزمن Speed-Time Graph) (أ) احسب التسارع خلال الثواني العشر الأولى. (ب) احسب المسافة المقطوعة خلال الثواني الـ30 الأولى. (ج) احسب متوسط السرعة للرحلة بأكملها (45 ثانية).',en:'(Based on a Speed-Time Graph) (a) Calculate the acceleration during the first 10 seconds. (b) Calculate the distance travelled in the first 30 seconds. (c) Calculate the average speed for the whole journey (45 seconds).'},m:7,a:'shown',e:{ar:'(أ) تُحسب من ميل الخط في أول 10 ثوانٍ (Δv/Δt) | (ب) تُحسب من المساحة تحت المنحنى في أول 30 ثانية | (ج) إجمالي المسافة ÷ 45',en:'(a) calculated from the gradient in the first 10 seconds (Δv/Δt) | (b) calculated from the area under the curve in the first 30 seconds | (c) total distance ÷ 45'}},
+{q:{ar:'لديك المصفوفات: A = (2 5 ؛ 6 4)، B = (6 5 ؛ 4 2)، C = (4 5 ؛ 6 2)، D = (4 ؛ 2). (أ) أي من العمليات التالية غير ممكنة؟ AB، AD، BA، DA. (ب) احسب المصفوفة BC. (ج) استخدم إجابتك في (ب) أو احسب مباشرة لإيجاد المصفوفة المعكوسة B⁻¹.',en:'You have matrices: A = (2 5; 6 4), B = (6 5; 4 2), C = (4 5; 6 2), D = (4; 2). (a) Which of the following operations is not possible? AB, AD, BA, DA. (b) Calculate matrix BC. (c) Use your answer to (b), or calculate directly, to find the inverse matrix B⁻¹.'},m:5,a:'DA,(54 40;28 24),(-0.25 0.625;0.5 -0.75)',e:{ar:'(أ) DA غير ممكنة (D رتبة 2×1، A رتبة 2×2) | (ب) (54 40 ؛ 28 24) | (ج) B⁻¹ = (−0.25 0.625 ؛ 0.5 −0.75)',en:'(a) DA is not possible (D is 2×1, A is 2×2) | (b) (54 40; 28 24) | (c) B⁻¹ = (−0.25 0.625; 0.5 −0.75)'}}
+]},
+/* ═══════ PAPER 3 (CORE) — ساعتان — 104 درجات ═══════ */
+{id:'p3',title:{ar:'📗 الورقة 3 (أساسي)',en:'📗 Paper 3 (Core)'},tier:'core',color:'#059669',code:{ar:'الورقة 3 (أساسي) — مايو/يونيو 2004 — ساعتان — 104 درجات',en:'Paper 3 (Core) — May/June 2004 — 2 hours — 104 marks'},questions:[
+{q:{ar:'(أ) درجات 10 طلاب في امتحان: 65، 51، 35، 34، 12، 51، 50، 75، 48، 39. (1) اكتب المنوال. (2) أوجد الوسيط. (3) احسب المتوسط الحسابي. (ب) جدول تقديرات المدرسة بأكملها: A=5, B=15, C=40, D=20, E=10 (المجموع 90). (1) أكمل الجدول بحساب زوايا المخطط الدائري لكل تقدير. (2) ارسم مخططاً دائرياً دقيقاً لعرض هذه البيانات. (3) ما احتمال أن يكون طالب اختير عشوائياً قد حصل على: (أ) التقدير C (ب) التقدير D أو E؟',en:"(a) The scores of 10 students in an exam: 65, 51, 35, 34, 12, 51, 50, 75, 48, 39. (1) Write the mode. (2) Find the median. (3) Calculate the mean. (b) A table shows the whole school's grades: A=5, B=15, C=40, D=20, E=10 (total 90). (1) Complete the table by calculating the pie-chart angle for each grade. (2) Draw an accurate pie chart to show this data. (3) What is the probability that a randomly chosen student got: (a) grade C (b) grade D or E?"},m:13,a:'51,49,46,20,60,160,80,40,4/9,1/3',svg:'mj04p3q1',e:{ar:'(أ-1) 51 | (أ-2) 49 (بين 48 و50) | (أ-3) 46 (المجموع 460 ÷ 10) | (ب-1) الزوايا: A=20°، B=60°، C=160°، D=80°، E=40° | (ب-3أ) 4/9 | (ب-3ب) 1/3',en:'(a-1) 51 | (a-2) 49 (between 48 and 50) | (a-3) 46 (total 460 ÷ 10) | (b-1) angles: A=20°, B=60°, C=160°, D=80°, E=40° | (b-3a) 4/9 | (b-3b) 1/3'}},
+{q:{ar:'يوضح الرسم مأوى ماعز سقفه مربع 3×3 أمتار وارتفاعه 2 متر، مع أربعة أعمدة رأسية متطابقة في الزوايا وثلاثة جدران فقط (الجهة الأمامية مفتوحة). (أ) احسب مساحة السقف. (ب)(1) احسب مساحة جدار واحد (2) اكتب المساحة الكلية للجدران الثلاثة. (ج) كل لوح خشبي طوله 3م وعرضه 20سم: (1) احسب مساحة لوح واحد بالمتر المربع (2) احسب العدد الإجمالي للألواح اللازمة لبناء الجدران الثلاثة. (د) كل عمود ارتفاعه 2م ومقطعه العرضي 10سم×10سم، احسب حجم عمود واحد بالمتر المكعب. (هـ) احسب التكلفة الإجمالية للمأوى (الأعمدة 1.20$ للواحد، الألواح 0.30$ للواحد، مادة السقف 1.60$/م²، المسامير 1.40$/كجم وتحتاج 1.5كجم).',en:'The diagram shows a goat shelter with a square roof 3m×3m, height 2m, four identical vertical corner posts, and only three walls (the front is open). (a) Calculate the area of the roof. (b)(1) Calculate the area of one wall (2) write the total area of the three walls. (c) Each wooden plank is 3m long and 20cm wide: (1) calculate the area of one plank in m² (2) calculate the total number of planks needed to build the three walls. (d) Each post is 2m tall with a cross-section of 10cm×10cm; calculate the volume of one post in m³. (e) Calculate the total cost of the shelter (posts $1.20 each, planks $0.30 each, roofing material $1.60/m², nails $1.40/kg, needing 1.5kg).'},m:14,a:'9,6,18,0.6,30,0.02,30.30',svg:'mj04p3q2',e:{ar:'(أ) 9 م² | (ب-1) 6 م² | (ب-2) 18 م² | (ج-1) 0.6 م² | (ج-2) 30 لوحاً | (د) 0.02 م³ | (هـ) التكلفة الإجمالية 30.30$ (أعمدة 4.80$، خشب 9.00$، سقف 14.40$، مسامير 2.10$)',en:'(a) 9 m² | (b-1) 6 m² | (b-2) 18 m² | (c-1) 0.6 m² | (c-2) 30 planks | (d) 0.02 m³ | (e) total cost $30.30 (posts $4.80, wood $9.00, roof $14.40, nails $2.10)'}},
+{q:{ar:'(يُجاب على ورقة رسم بياني) (أ) أكمل الجدول الخاص بالمعادلة y = 8 − x² للفترة −3.5 ≤ x ≤ 3.5. (ب) ارسم المنحنى. (ج) باستخدام الرسم البياني، اكتب قيم x التي تحقق 8 − x² = 0. (د) أكمل الجدول الخاص بالمعادلة y = 2x + 5 عند x = −3, 0, 3. (هـ) ارسم المستقيم y = 2x + 5 للفترة −3 ≤ x ≤ 3 على نفس الشبكة. (و) أوجد ميل المستقيم y = 2x + 5. (ز) باستخدام الرسمين، اكتب الإحداثيات السينية لنقاط تقاطع المنحنيين y = 8 − x² و y = 2x + 5.',en:'(Answer on graph paper) (a) Complete the table for y = 8 − x² for −3.5 ≤ x ≤ 3.5. (b) Draw the curve. (c) Using the graph, write the values of x satisfying 8 − x² = 0. (d) Complete the table for y = 2x + 5 at x = −3, 0, 3. (e) Draw the line y = 2x + 5 for −3 ≤ x ≤ 3 on the same grid. (f) Find the gradient of the line y = 2x + 5. (g) Using both graphs, write the x-coordinates of the points of intersection of y = 8 − x² and y = 2x + 5.'},m:17,a:'shown,2.8,-2.8,-1,5,11,2,-3,1',table:[['x','-3.5','-3','-2.5','-2','-1.5','-1','0','1','1.5','2','2.5','3','3.5'],['y','-4.25','-1','1.75','4','5.75','7','8','7','5.75','4','1.75','-1','-4.25']],e:{ar:'(ج) x ≈ 2.8 أو x ≈ −2.8 (أي ±√8) | (د) y = −1, 5, 11 | (و) الميل = 2 | (ز) x = −3 و x = 1',en:'(c) x ≈ 2.8 or x ≈ −2.8 (i.e. ±√8) | (d) y = −1, 5, 11 | (f) gradient = 2 | (g) x = −3 and x = 1'}},
+{q:{ar:'(أ) احسب قيمة s في الشكل (زوايا حول نقطة: 80°، 110°، 50°، وs). (ب) احسب قيمة t في الشكل الرباعي (زواياه: 75°، 75°، t، و2t). (ج)(1) في المثلث، الزوايا هي 50°، 2y، وx. أكمل: x + 2y = ............. (2) في الشكل الرباعي، الزوايا هي 160°، 100°، x، وy. أكمل: x + y = ............. (3) حل المعادلتين الآنيتين الناتجتين من الجزأين (1) و(2) لإيجاد قيمتي x وy.',en:'(a) Calculate the value of s in the diagram (angles round a point: 80°, 110°, 50°, and s). (b) Calculate the value of t in the quadrilateral (angles: 75°, 75°, t, and 2t). (c)(1) In the triangle, the angles are 50°, 2y, and x. Complete: x + 2y = ............. (2) In the quadrilateral, the angles are 160°, 100°, x, and y. Complete: x + y = ............. (3) Solve the resulting simultaneous equations from parts (1) and (2) to find x and y.'},m:10,a:'120,70,130,100,70,30',e:{ar:'(أ) s = 120° (360 − (80+110+50)) | (ب) t = 70 (75+75+t+2t=360 ⇒ 3t=210) | (ج-1) x+2y=130 | (ج-2) x+y=100 | (ج-3) x=70، y=30',en:'(a) s = 120° (360 − (80+110+50)) | (b) t = 70 (75+75+t+2t=360 ⇒ 3t=210) | (c-1) x+2y=130 | (c-2) x+y=100 | (c-3) x=70, y=30'}},
+{q:{ar:'(أ) حوّل 200 متر إلى كيلومترات. (ب) في الشكل، النقطتان Q وS تقعان على دائرة نصف قطرها 7.8 كم ومركزها C. تم مد الخط CQ بمقدار 200 متر ليصل إلى النقطة P. PS مماس للدائرة عند النقطة S. (1) لماذا تكون الزاوية PSC قائمة (90°)؟ (2) اكتب طول PC بالكيلومترات. (3) احسب طول PS بالكيلومترات. (4) احسب مساحة المثلث PSC، مقربة إلى رقمين معنويين.',en:'(a) Convert 200 metres to kilometres. (b) In the diagram, points Q and S lie on a circle of radius 7.8 km, centre C. The line CQ is extended by 200 metres to reach point P. PS is a tangent to the circle at point S. (1) Why is angle PSC a right angle (90°)? (2) Write the length of PC in kilometres. (3) Calculate the length of PS in kilometres. (4) Calculate the area of triangle PSC, correct to 2 significant figures.'},m:9,a:'0.2,tangent,8.0,1.78,6.9',svg:'mj04p3q5',e:{ar:'(أ) 0.2 كم | (ب-1) لأن المماس للدائرة يكون عمودياً على نصف القطر عند نقطة التماس | (ب-2) 8.0 كم (7.8+0.2) | (ب-3) 1.78 كم (√(8²−7.8²)) | (ب-4) 6.9 كم² (0.5×7.8×1.78)',en:'(a) 0.2 km | (b-1) because a tangent to a circle is perpendicular to the radius at the point of contact | (b-2) 8.0 km (7.8+0.2) | (b-3) 1.78 km (√(8²−7.8²)) | (b-4) 6.9 km² (0.5×7.8×1.78)'}},
+{q:{ar:'(على الشبكة المرفقة) (أ) صِف تماماً التحويل الهندسي الوحيد الذي ينقل: (1) الشكل A إلى الشكل B (2) الشكل C إلى الشكل D. (ب) على الشبكة، ارسم: (1) انعكاس الشكل E في محور الصادات (y-axis) (2) تكبير الشكل F بمعامل قياس 2 ومركزه نقطة الأصل (0, 0).',en:'(On the attached grid) (a) Describe fully the single transformation that maps: (1) shape A to shape B (2) shape C to shape D. (b) On the grid, draw: (1) the reflection of shape E in the y-axis (2) the enlargement of shape F with scale factor 2, centre the origin (0, 0).'},m:10,a:'shown',e:{ar:'تُقرأ التحويلات من إحداثيات الأشكال على الشبكة المرفقة في الامتحان (إزاحة/انعكاس/دوران حسب الموضع)',en:'Transformations are read from the shape coordinates on the grid attached to the exam (translation/reflection/rotation depending on position)'}},
+{q:{ar:'(أ)(1) ما هو الاسم الخاص للمضلع ذي الخمسة أضلاع؟ (2) احسب مجموع قياسات الزوايا الداخلية لمضلع منتظم ذي خمسة أضلاع. (3) احسب قياس زاوية داخلية واحدة. (ب) أبحرت سفينة 100 كم من النقطة A على اتجاه 070° إلى النقطة B، ثم أبحرت 120 كم على اتجاه 160° إلى النقطة C. (1) أثبت أن x + y = 90° (باستخدام خصائص الاتجاهات والزوايا المتبادلة). (2) استخدم حساب المثلثات لحساب قياس الزاوية BAC. (3) أوجد اتجاه النقطة C من النقطة A. (4) أوجد اتجاه النقطة A من النقطة C.',en:'(a)(1) What is the special name for a five-sided polygon? (2) Calculate the sum of the interior angles of a regular five-sided polygon. (3) Calculate the size of one interior angle. (b) A ship sailed 100 km from point A on a bearing of 070° to point B, then sailed 120 km on a bearing of 160° to point C. (1) Show that x + y = 90° (using bearings and alternate angle properties). (2) Use trigonometry to calculate angle BAC. (3) Find the bearing of point C from point A. (4) Find the bearing of point A from point C.'},m:10,a:'pentagon,540,108,shown,50.2,120,300',svg:'mj04p3q7',e:{ar:'(أ-1) خماسي (Pentagon) | (أ-2) 540° | (أ-3) 108° | (ب-2) 50.2° (tan⁻¹(120/100)) | (ب-3) 120° (070°+50.2°) | (ب-4) 300° (120°+180°)',en:'(a-1) Pentagon | (a-2) 540° | (a-3) 108° | (b-2) 50.2° (tan⁻¹(120/100)) | (b-3) 120° (070°+50.2°) | (b-4) 300° (120°+180°)'}},
+{q:{ar:'تظهر الخريطة ثلاث بلدات A، B، C وطريقاً. (أ)(1) قِس واكتب المسافة من A إلى B بالسنتيمتر. (2) البلدات A وB تبعدان 60 كم فعلياً؛ أكمل: 1 سم يمثل ............. كم. (3) أوجد المسافة الفعلية بالكيلومترات من A إلى C. (ب) سيتم بناء مطار على بعد 10 كم من الطريق؛ على الخريطة، ارسم بدقة المحل الهندسي للنقاط التي تبعد 10 كم عن الطريق. (ج) يجب أن يكون المطار على نفس البعد من A ومن B؛ باستخدام الفرجار والمسطرة فقط، ارسم المحل الهندسي للنقاط المتساوية البعد عن A وB. (د) يجب ألا يبعد المطار أكثر من 40 كم عن C؛ ارسم المحل الهندسي للنقاط التي تبعد 40 كم عن C. (هـ) علّم وحدد النقطة L، وهي الموقع المناسب للمطار.',en:'A map shows three towns A, B, C and a road. (a)(1) Measure and write the distance from A to B in centimetres. (2) Towns A and B are actually 60 km apart; complete: 1 cm represents ............. km. (3) Find the actual distance in km from A to C. (b) An airport will be built within 10 km of the road; on the map, accurately draw the locus of points 10 km from the road. (c) The airport must be equidistant from A and B; using compasses and ruler only, draw the locus of points equidistant from A and B. (d) The airport must be no more than 40 km from C; draw the locus of points 40 km from C. (e) Mark and label point L, the suitable location for the airport.'},m:11,a:'shown,20',e:{ar:'(أ-2) 20 كم (60 ÷ 3 سم، بافتراض المسافة المقاسة 3 سم) | (ب-هـ) تُقاس من الخريطة المرفقة في الامتحان مع إنشاءات هندسية دقيقة',en:'(a-2) 20 km (60 ÷ 3 cm, assuming measured distance is 3 cm) | (b-e) measured from the map attached to the exam with accurate geometric constructions'}},
+{q:{ar:'(أ) متتالية نقاط ومربعات: مربع واحد = 4 نقاط، مربعان = 6 نقاط، 3 مربعات = 8 نقاط، 4 مربعات = 10 نقاط. (1) أوجد عدد النقاط عندما يكون هناك 5 مربعات. (2) أوجد عدد النقاط عندما يكون هناك 9 مربعات. (3) أوجد تعبيراً لعدد النقاط عندما يكون هناك n مربعاً. (ب) متتالية أخرى: الشكل 1 = 4 نقاط و1 مربع؛ الشكل 2 = 8 نقاط و4 مربعات؛ الشكل 3 = 12 نقطة و9 مربعات؛ الشكل 4 = 16 نقطة و16 مربعاً. (1) بالنسبة للشكل 5، أوجد: (أ) عدد النقاط (ب) عدد المربعات. (2) أوجد عدد النقاط في الشكل الذي يحتوي على 144 مربعاً. (3) أوجد عدد المربعات في الشكل الذي يحتوي على 40 نقطة.',en:'(a) A sequence of dots and squares: 1 square = 4 dots, 2 squares = 6 dots, 3 squares = 8 dots, 4 squares = 10 dots. (1) Find the number of dots when there are 5 squares. (2) Find the number of dots when there are 9 squares. (3) Find an expression for the number of dots when there are n squares. (b) Another sequence: Figure 1 = 4 dots, 1 square; Figure 2 = 8 dots, 4 squares; Figure 3 = 12 dots, 9 squares; Figure 4 = 16 dots, 16 squares. (1) For Figure 5, find: (a) the number of dots (b) the number of squares. (2) Find the number of dots in the figure with 144 squares. (3) Find the number of squares in the figure with 40 dots.'},m:10,a:'12,20,2n+2,20,25,48,100',svg:'mj04p3q9',e:{ar:'(أ-1) 12 | (أ-2) 20 | (أ-3) 2n + 2 | (ب-1أ) 20 نقطة | (ب-1ب) 25 مربعاً | (ب-2) 48 نقطة (144 مربعاً ⇒ n=12، النقاط=4×12) | (ب-3) 100 مربع (40 نقطة ⇒ n=10، المربعات=10²)',en:'(a-1) 12 | (a-2) 20 | (a-3) 2n + 2 | (b-1a) 20 dots | (b-1b) 25 squares | (b-2) 48 dots (144 squares ⇒ n=12, dots=4×12) | (b-3) 100 squares (40 dots ⇒ n=10, squares=10²)'}}
+]},
+/* ═══════ PAPER 4 (EXTENDED) — ساعتان ونصف — 130 درجة ═══════ */
+{id:'p4',title:{ar:'📙 الورقة 4 (متقدم)',en:'📙 Paper 4 (Extended)'},tier:'extended',color:'#ea580c',code:{ar:'الورقة 4 (متقدم) — مايو/يونيو 2004 — ساعتان ونصف — 130 درجة',en:'Paper 4 (Extended) — May/June 2004 — 2.5 hours — 130 marks'},questions:[
+{q:{ar:'تشتري فاطمة ومحمد دراجة هوائية. (أ) اشترت فاطمة دراجة مدينة بسعر 120$، دفعت 60% من هذا السعر مقدماً، ثم تدفع 10$ شهرياً لمدة 6 أشهر. (1) كم تدفع فاطمة إجمالاً؟ (2) احسب إجابتك في الجزء (1) كنسبة مئوية من السعر الأصلي (120$). (ب) اشترى محمد دراجة جبلية بسعر 159.10$ في تخفيضات، بعد أن خُفض السعر الأصلي بنسبة 14%. احسب السعر الأصلي للدراجة. (ج) طول محمد 169 سم وطول فاطمة 156 سم. أطوال إطارات دراجتيهما تتناسب مع طوليهما. إذا كان طول إطار دراجة محمد 52 سم، احسب طول إطار دراجة فاطمة. (د) يشاركان في رحلة خيرية. (1) المسافة الكلية التي يقطعها الاثنان معاً هي 36 كم، والنسبة بين مسافة فاطمة ومسافة محمد هي 11 : 9. احسب المسافة التي قطعتها فاطمة. (2) المسافة 36 كم تمثل فقط ⅔ من المسافة الكلية التي يقطعها الفريق بأكمله. احسب هذه المسافة الكلية للفريق.',en:"Fatima and Mohammed buy a bicycle. (a) Fatima bought a city bike for $120. She paid 60% of this price upfront, then pays $10 a month for 6 months. (1) How much does Fatima pay in total? (2) Calculate your answer to part (1) as a percentage of the original price ($120). (b) Mohammed bought a mountain bike for $159.10 in a sale, after the original price was reduced by 14%. Calculate the original price of the bike. (c) Mohammed is 169 cm tall and Fatima is 156 cm tall. Their bike frame lengths are proportional to their heights. If Mohammed's bike frame is 52 cm, calculate Fatima's bike frame length. (d) They take part in a charity ride. (1) The total distance covered by both of them together is 36 km, with the ratio Fatima's distance : Mohammed's distance = 11 : 9. Calculate the distance Fatima covered. (2) The 36 km represents only ⅔ of the total distance covered by the whole team. Calculate this total team distance."},m:12,a:'132,110,185,48,19.8,54',e:{ar:'(أ-1) 132$ (72 + 60) | (أ-2) 110% (132 ÷ 120 × 100) | (ب) 185$ (159.10 ÷ 0.86) | (ج) 48 سم (156 × 52 ÷ 169) | (د-1) 19.8 كم (36 × 11/20) | (د-2) 54 كم (36 ÷ 2/3)',en:'(a-1) $132 (72 + 60) | (a-2) 110% (132 ÷ 120 × 100) | (b) $185 (159.10 ÷ 0.86) | (c) 48 cm (156 × 52 ÷ 169) | (d-1) 19.8 km (36 × 11/20) | (d-2) 54 km (36 ÷ 2/3)'}},
+{q:{ar:'(يُجاب على ورقة رسم بياني) الدالة f(x) = x³ + x² − 3x. (أ)(1) احسب قيم p، q، r من جدول القيم المعطى. (2) ارسم منحنى y = f(x) للفترة −3 ≤ x ≤ 4. (3) برسم خط مماس مناسب، قدّر ميل المنحنى عند النقطة التي x = −1. (ب) الدالة g(x) = 6 + 3x − x³. (1) احسب قيم u، v من جدول القيم المعطى. (2) على نفس الشبكة، ارسم منحنى y = g(x) للفترة −2 ≤ x ≤ 3. (ج)(1) أظهر أن المعادلة f(x) = g(x) تبسط إلى x³ + 3x² − 3x − 27 = 0. (2) استخدم رسمك البياني لحل هذه المعادلة.',en:'(Answer on graph paper) The function f(x) = x³ + x² − 3x. (a)(1) Calculate the values p, q, r from the given table of values. (2) Draw the curve y = f(x) for −3 ≤ x ≤ 4. (3) By drawing a suitable tangent, estimate the gradient of the curve at the point where x = −1. (b) The function g(x) = 6 + 3x − x³. (1) Calculate the values u, v from the given table of values. (2) On the same grid, draw the curve y = g(x) for −2 ≤ x ≤ 3. (c)(1) Show that the equation f(x) = g(x) simplifies to x³ + 3x² − 3x − 27 = 0. (2) Use your graph to solve this equation.'},m:18,a:'-9,0,68,-3,10,6,shown,-2.7,1.8',e:{ar:'(أ-1) p=−9، q=0، r=68 | (أ-3) الميل ≈ −3 | (ب-1) u=10، v=6 | (ج-2) الحلول تقريباً x ≈ −2.7 و x ≈ 1.8',en:'(a-1) p=−9, q=0, r=68 | (a-3) gradient ≈ −3 | (b-1) u=10, v=6 | (c-2) solutions approximately x ≈ −2.7 and x ≈ 1.8'}},
+{q:{ar:'تم تسجيل عمق نهر (d) بالسنتيمتر كل يوم لمدة عام (365 يوماً). توضح النتائج منحنى التكرار التراكمي. (أ) استخدم المنحنى لإيجاد: (1) العمق الوسيط. (2) المدى الربيعي. (3) العمق عند المئين الأربعين. (4) عدد الأيام التي كان فيها عمق النهر 25 سم على الأقل. (ب) الجدول يوضح توزيع الأيام حسب الفئات. (1) أظهر أن p = 47 و q = 15. (2) احسب تقديراً لمتوسط عمق النهر. (ج) رُسم مدرج تكراري لمجموعات أخرى. ارتفاع العمود للفترة 20 < d ≤ 40 هو 8 سم. احسب ارتفاع العمودين الآخرين للمجموعتين 0 < d ≤ 20 و 40 < d ≤ 70.',en:'The depth (d) of a river in centimetres was recorded every day for a year (365 days). The results are shown as a cumulative frequency curve. (a) Use the curve to find: (1) the median depth. (2) the inter-quartile range. (3) the depth at the 40th percentile. (4) the number of days the river depth was at least 25 cm. (b) The table shows the distribution of days by class. (1) Show that p = 47 and q = 15. (2) Calculate an estimate of the mean depth of the river. (c) A histogram was drawn for a different grouping. The bar height for the class 20 < d ≤ 40 is 8 cm. Calculate the bar heights for the classes 0 < d ≤ 20 and 40 < d ≤ 70.'},m:16,a:'33,11,28,290,shown,33.6,shown',e:{ar:'(أ-1) ≈33 سم | (أ-2) ≈11 سم | (أ-3) ≈28 سم | (أ-4) ≈290 يوماً | (ب-2) المتوسط ≈33.6 سم | (ج) الارتفاعات تُحسب من كثافة التكرار = التكرار ÷ عرض الفئة',en:'(a-1) ≈33 cm | (a-2) ≈11 cm | (a-3) ≈28 cm | (a-4) ≈290 days | (b-2) mean ≈33.6 cm | (c) heights calculated from frequency density = frequency ÷ class width'}},
+{q:{ar:'الشكل الرباعي ABCD رباعي دائري (Cyclic Quadrilateral). AB = 9.5 سم، BC = 11.1 سم، الزاوية ABC = 70°، والزاوية CAD = 37°. (أ) احسب طول AC. (ب) فسّر سبب كون الزاوية ADC = 110°. (ج) احسب طول AD. (د) النقطة E تقع على الدائرة بحيث يكون المثلث ACE متساوي الساقين، وأن EA = EC. (1) اكتب قياس الزاوية AEC. (2) احسب مساحة المثلث ACE.',en:'The quadrilateral ABCD is a cyclic quadrilateral. AB = 9.5 cm, BC = 11.1 cm, angle ABC = 70°, and angle CAD = 37°. (a) Calculate the length of AC. (b) Explain why angle ADC = 110°. (c) Calculate the length of AD. (d) Point E lies on the circle such that triangle ACE is isosceles, with EA = EC. (1) Write the size of angle AEC. (2) Calculate the area of triangle ACE.'},m:13,a:'11.89,shown,6.48,110,33.1',svg:'mj04p4q4',e:{ar:'(أ) 11.89 سم (قانون جيب التمام) | (ب) لأن الزوايا المتقابلة في الرباعي الدائري مجموعها 180°، إذن الزاوية ADC = 180 − 70 = 110° | (ج) 6.48 سم (باستخدام قانون الجيب، الزاوية ACD=33°) | (د-1) 110° (زاوية محيطية على نفس القوس) | (د-2) 33.1 سم²',en:'(a) 11.89 cm (cosine rule) | (b) because opposite angles in a cyclic quadrilateral sum to 180°, so angle ADC = 180 − 70 = 110° | (c) 6.48 cm (using the sine rule, angle ACD=33°) | (d-1) 110° (angle in the same segment) | (d-2) 33.1 cm²'}},
+{q:{ar:'تمشي ماريا مسافة 10 كيلومترات إلى شلال بمتوسط سرعة x كيلومتر/ساعة. (أ) اكتب، بدلالة x، الزمن المستغرق بالساعات. (ب) تعود ماريا من الشلال، لكنها تمشي المسافة 10 كم بسرعة متوسطة (x + 1) كيلومتر/ساعة. زمن رحلة العودة أقل بـ30 دقيقة من زمن رحلة الذهاب. اكتب معادلة بدلالة x وأظهر أنها تبسط إلى x² + x − 20 = 0. (ج) حل المعادلة x² + x − 20 = 0. (د) أوجد الزمن الذي تستغرقه ماريا للمشي إلى الشلال.',en:'Maria walks 10 kilometres to a waterfall at an average speed of x km/h. (a) Write, in terms of x, the time taken in hours. (b) Maria returns from the waterfall, walking the 10 km at an average speed of (x + 1) km/h. The return journey takes 30 minutes less than the outward journey. Write an equation in terms of x and show that it simplifies to x² + x − 20 = 0. (c) Solve the equation x² + x − 20 = 0. (d) Find the time Maria took to walk to the waterfall.'},m:9,a:'10/x,shown,4,2.5',e:{ar:'(أ) 10/x ساعة | (ج) x = 4 (من (x+5)(x−4)=0، نرفض الحل السالب) | (د) 2.5 ساعة (ساعتان و30 دقيقة)',en:'(a) 10/x hours | (c) x = 4 (from (x+5)(x−4)=0, rejecting the negative solution) | (d) 2.5 hours (2 hours 30 minutes)'}},
+{q:{ar:'يوضح الرسم مجسماً مكوناً من نصف كرة ومخروط. نصف قطر قاعدة المخروط ونصف قطر نصف الكرة كلاهما 7 سم، وارتفاع المخروط 13 سم. (أ)(1) احسب الحجم الكلي للمجسم. (2) المجسم مصنوع من الخشب، وكل 1 سم³ من هذا الخشب كتلته 0.94 جرام؛ احسب كتلة المجسم بالكيلوجرام، مقربة إلى منزلة عشرية واحدة. (ب) احسب مساحة السطح المنحني للمخروط. (ج) تكلفة تغطية المجسم بالكامل بطلاء ذهبي هي 411.58$؛ احسب تكلفة هذا الطلاء لكل سنتيمتر مربع.',en:"The diagram shows a solid made of a hemisphere and a cone. The cone's base radius and the hemisphere's radius are both 7 cm, and the cone's height is 13 cm. (a)(1) Calculate the total volume of the solid. (2) The solid is made of wood, and 1 cm³ of this wood has a mass of 0.94 grams; calculate the mass of the solid in kilograms, correct to 1 decimal place. (b) Calculate the curved surface area of the cone. (c) The cost of covering the entire solid with gold paint is $411.58; calculate the cost of this paint per square centimetre."},m:13,a:'1385.4,1.3,325.6,0.65',svg:'mj04p4q6',e:{ar:'(أ-1) 1385.4 سم³ (⅔π(7³) + ⅓π(7²)(13) = 441π) | (أ-2) 1.3 كجم (1385.4×0.94 ≈ 1302.3جم) | (ب) 325.6 سم² (πrl حيث l=√(7²+13²)) | (ج) 0.65$/سم² (المساحة الكلية = 325.6 + مساحة نصف الكرة 2π(7²) = 633.5 سم²؛ 411.58 ÷ 633.5)',en:'(a-1) 1385.4 cm³ (⅔π(7³) + ⅓π(7²)(13) = 441π) | (a-2) 1.3 kg (1385.4×0.94 ≈ 1302.3g) | (b) 325.6 cm² (πrl where l=√(7²+13²)) | (c) $0.65/cm² (total area = 325.6 + hemisphere area 2π(7²) = 633.5 cm²; 411.58 ÷ 633.5)'}},
+{q:{ar:'(أ) يوجد 30 طالباً في الفصل. 20 يدرسون الفيزياء، 15 يدرسون الكيمياء، و3 لا يدرسون أياً منهما. (1) انسخ مخطط فين وأكمله. (2) أوجد عدد الطلاب الذين يدرسون الفيزياء والكيمياء معاً. (3) طالب يُختار عشوائياً. أوجد احتمال أن يدرس الفيزياء فقط (وليس الكيمياء). (4) طالب يدرس الفيزياء يُختار عشوائياً. أوجد احتمال ألا يدرس الكيمياء. (ب) الكيس A يحتوي على 6 خرزات بيضاء و3 سوداء. الكيس B يحتوي على 6 بيضاء و4 سوداء. تُختار خرزة واحدة عشوائياً من كل كيس. (1) أوجد احتمال أن تكون كلتا الخرزتين سوداوين. (2) أوجد احتمال أن تكون واحدة على الأقل بيضاء. الآن، لا يتم استبدال الخرزات. تُختار خرزة ثانية عشوائياً من كل كيس. (3) أوجد احتمال أن تكون الخرزات الأربع كلها بيضاء. (4) أوجد احتمال ألا تكون الخرزات كلها من نفس اللون.',en:"(a) There are 30 students in the class. 20 study Physics, 15 study Chemistry, and 3 study neither. (1) Copy and complete the Venn diagram. (2) Find the number of students who study both Physics and Chemistry. (3) A student is chosen at random. Find the probability that they study only Physics (not Chemistry). (4) A student who studies Physics is chosen at random. Find the probability that they do not study Chemistry. (b) Bag A contains 6 white beads and 3 black beads. Bag B contains 6 white and 4 black beads. One bead is chosen at random from each bag. (1) Find the probability that both beads are black. (2) Find the probability that at least one is white. Now, the beads are not replaced. A second bead is chosen at random from each bag. (3) Find the probability that all four beads are white. (4) Find the probability that the beads are not all the same colour."},m:17,a:'shown,8,2/5,3/5,2/15,13/15,5/18,32/45',svg:'mj04p4q7',e:{ar:'(أ-2) 8 طلاب (20+15+3−30) | (أ-3) 2/5 (12 طالباً فيزياء فقط ÷ 30) | (أ-4) 3/5 (12 ÷ 20) | (ب-1) 2/15 | (ب-2) 13/15 | (ب-3) 5/18 | (ب-4) 32/45',en:'(a-2) 8 students (20+15+3−30) | (a-3) 2/5 (12 students only-Physics ÷ 30) | (a-4) 3/5 (12 ÷ 20) | (b-1) 2/15 | (b-2) 13/15 | (b-3) 5/18 | (b-4) 32/45'}},
+{q:{ar:'(يعتمد على شبكة تحويلات هندسية مرفقة) (أ) صِف تماماً التحويل الهندسي الوحيد الذي ينقل: (1) الشكل A إلى B (2) الشكل B إلى C (3) الشكل A إلى D (4) الشكل B إلى E (5) الشكل B إلى F (6) الشكل A إلى G. (ب) المصفوفة (0 −1 ؛ 1 0) تمثل تحويلاً؛ أي شكل من الأشكال هو صورة الشكل A بعد هذا التحويل؟ (ج) أوجد المصفوفة 2×2 التي تمثل التحويل الذي ينقل: (1) الشكل B إلى D (2) الشكل A إلى G.',en:'(Based on an attached transformation grid) (a) Describe fully the single transformation that maps: (1) shape A to B (2) shape B to C (3) shape A to D (4) shape B to E (5) shape B to F (6) shape A to G. (b) The matrix (0 −1; 1 0) represents a transformation; which shape is the image of shape A after this transformation? (c) Find the 2×2 matrix representing the transformation that maps: (1) shape B to D (2) shape A to G.'},m:18,a:'shown',e:{ar:'تعتمد الإجابات على قراءة إحداثيات الأشكال من الشبكة المرفقة في نص الامتحان الأصلي',en:'Answers depend on reading the shape coordinates from the grid attached to the original exam paper'}},
+{q:{ar:'(يُجاب على ورقة رسم بياني) متجر يشتري x قلماً رصاصاً وy قلماً جافاً. سعر قلم الرصاص 15 سنتاً، وسعر القلم الجاف 25 سنتاً. (أ) المبلغ الأقصى للإنفاق هو 20$. أظهر أن هذا يؤدي إلى المتباينة 3x + 5y ≤ 400. (ب) عدد الأقلام الجافة يجب ألا يكون أكبر من عدد أقلام الرصاص. اكتب متباينة لذلك. (ج) يجب أن يكون هناك 35 قلماً جافاً على الأقل. اكتب متباينة لذلك. (د) ارسم الخطوط الثلاثة على الشبكة وظلل المناطق غير المطلوبة. (هـ) عند شراء 70 قلماً رصاصاً، ما هو أكبر عدد ممكن من الأقلام الجافة؟ (و) الربح من قلم الرصاص 5 سنتات، ومن القلم الجاف 7 سنتات. أوجد أكبر ربح ممكن.',en:'(Answer on graph paper) A shop buys x pencils and y pens. A pencil costs 15 cents, and a pen costs 25 cents. (a) The maximum amount to spend is $20. Show that this leads to the inequality 3x + 5y ≤ 400. (b) The number of pens must not be greater than the number of pencils. Write an inequality for this. (c) There must be at least 35 pens. Write an inequality for this. (d) Draw the three lines on the grid and shade the unwanted regions. (e) When buying 70 pencils, what is the largest possible number of pens? (f) The profit is 5 cents per pencil and 7 cents per pen. Find the greatest possible profit.'},m:14,a:'shown,y<=x,y>=35,shown,38,620',e:{ar:'(ب) y ≤ x | (ج) y ≥ 35 | (هـ) 38 قلماً (210 + 5y ≤ 400 ⇒ y ≤ 38) | (و) 620 سنتاً = 6.20$ (عند النقطة (75, 35): 5(75)+7(35)=620)',en:'(b) y ≤ x | (c) y ≥ 35 | (e) 38 pens (210 + 5y ≤ 400 ⇒ y ≤ 38) | (f) 620 cents = $6.20 (at point (75, 35): 5(75)+7(35)=620)'}}
+]}
+];
+
+/* ══════════════ STATE SAVE/RESTORE ══════════════ */
+function saveState(){const s={};document.querySelectorAll('.answer-input').forEach(i=>{const c=i.closest('.question-card');if(c)s[c.id]=i.value;});return s;}
+function restoreState(s){document.querySelectorAll('.answer-input').forEach(i=>{const c=i.closest('.question-card');if(c&&s[c.id]!==undefined){i.value=s[c.id];checkAnswer(i);}});}
+
+/* ══════════════ RENDER ══════════════ */
+function renderSidebar(){
+const sb=document.getElementById('sidebar');
+let html=`<div class="sidebar-title">${T.sidebar_title[currentLang]}</div>`;
+examData.forEach(p=>{
+const bg=p.tier==='extended'?'#dc2626':'#2563eb';
+html+=`<div class="sidebar-session" style="background:${bg};">${p.title[currentLang]} (${p.questions.length})</div>`;
+p.questions.forEach((q,i)=>{html+=`<a href="#${p.id}-q${i}" class="sidebar-link">${T.q_word[currentLang]} ${i+1}</a>`;});
+});
+sb.innerHTML=html;
+}
+
+function renderTable(tbl){
+if(!tbl)return '';
+let h='<table class="data-table"><tbody>';
+tbl.forEach(row=>{h+='<tr>';row.forEach(c=>{h+=`<td>${c}</td>`;});h+='</tr>';});
+return h+'</tbody></table>';
+}
+
+function renderExam(){
+const c=document.getElementById('exam-content');
+let html='';
+examData.forEach(p=>{
+const tb=p.tier==='extended'?`<span class="tier-badge tier-higher">${T.extended[currentLang]}</span>`:`<span class="tier-badge tier-foundation">${T.core[currentLang]}</span>`;
+html+=`<section id="${p.id}" class="page-break"><div class="section-header" style="background:linear-gradient(135deg,${p.color},${p.color}cc);"><h2><span class="paper-badge">📄 ${p.title[currentLang]}</span>${tb} <span style="opacity:0.9;font-size:0.8rem;">${p.code[currentLang]}</span> — ${p.questions.length} ${T.questions_word[currentLang]}</h2></div>`;
+p.questions.forEach((q,i)=>{
+const qId=`${p.id}-q${i}`;
+const svgHtml=q.svg&&SVG_FIGURES[q.svg]?SVG_FIGURES[q.svg]:'';
+const tblHtml=renderTable(q.table);
+html+=`<div class="question-card" id="${qId}">
+<p style="margin:0 0 6px;"><strong>${T.q_word[currentLang]} ${i+1}.</strong> ${q.q[currentLang]} <span class="marks-badge">${q.m} ${T.marks[currentLang]}</span></p>
+${svgHtml}${tblHtml}
+<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:4px;">
+<input type="text" class="answer-input" data-answer="${q.a}" data-paper="${p.id}" placeholder="${T.answer_ph[currentLang]}" oninput="checkAnswer(this)">
+<button class="reveal-btn" onclick="toggleSubAnswer(this)">👁️</button>
+</div>
+<div class="answer-box hidden">✅ ${q.e[currentLang]}</div>
+</div>`;
+});
+html+=`</section>`;
+});
+c.innerHTML=html;
+document.querySelectorAll('.svg-caption').forEach(el=>{
+el.innerHTML=currentLang==='ar'?el.getAttribute('data-cap-ar'):el.getAttribute('data-cap-en');
+});
+}
+
+function renderPaperScores(){
+const c=document.getElementById('paper-scores');
+let html='';
+examData.forEach(p=>{html+=`<div class="flex justify-between items-center"><span class="text-gray-700 text-xs">📄 ${p.title[currentLang]}</span><span id="score-${p.id}" class="font-bold text-emerald-600 text-xs">0/${p.questions.length}</span></div>`;});
+c.innerHTML=html;
+}
+
+/* ══════════════ LANGUAGE ══════════════ */
+function setLanguage(lang){
+currentLang=lang;
+document.documentElement.lang=lang;
+document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+document.getElementById('btn-ar').classList.toggle('active',lang==='ar');
+document.getElementById('btn-en').classList.toggle('active',lang==='en');
+document.body.classList.toggle('en-mode',lang==='en');
+document.getElementById('time-label').innerHTML=T.time_label[lang];
+document.getElementById('st-papers').innerHTML=T.st_papers[lang];
+document.getElementById('st-questions').innerHTML=T.st_questions[lang];
+document.getElementById('st-minutes').innerHTML=T.st_minutes[lang];
+document.getElementById('st-session').innerHTML=T.st_session[lang];
+document.getElementById('btn-toggle').innerHTML=T.btn_toggle[lang];
+document.getElementById('btn-print').innerHTML=T.btn_print[lang];
+document.getElementById('btn-expand').innerHTML=T.btn_expand[lang];
+document.getElementById('btn-collapse').innerHTML=T.btn_collapse[lang];
+document.getElementById('btn-submit').innerHTML=T.btn_submit[lang];
+document.getElementById('h-title').innerHTML=T.h_title[lang];
+document.getElementById('h-sub').innerHTML=T.h_sub[lang];
+document.getElementById('h-papers').innerHTML=T.h_papers[lang];
+document.getElementById('h-warn').innerHTML=T.h_warn[lang];
+document.getElementById('res-title').innerHTML=T.res_title[lang];
+document.getElementById('rl-name').innerHTML=T.rl_name[lang];
+document.getElementById('rl-date').innerHTML=T.rl_date[lang];
+document.getElementById('rl-total').innerHTML=T.rl_total[lang];
+document.getElementById('rl-rate').innerHTML=T.rl_rate[lang];
+document.getElementById('rl-perf').innerHTML=T.rl_perf[lang];
+document.getElementById('btn-printres').innerHTML=T.btn_printres[lang];
+document.getElementById('studentName').placeholder=T.ph_name[lang];
+document.getElementById('studentClass').placeholder=T.ph_class[lang];
+document.getElementById('examDate').placeholder=T.ph_date[lang];
+const st=saveState();
+renderSidebar();renderExam();renderPaperScores();
+restoreState(st);updateProgress();
+}
+
+/* ══════════════ UI FUNCTIONS ══════════════ */
+function toggleSubAnswer(btn){const ab=btn.closest('.question-card').querySelector('.answer-box');if(ab)ab.classList.toggle('hidden');}
+function toggleAllAnswers(){answersVisible=!answersVisible;document.querySelectorAll('.answer-box').forEach(el=>el.classList.toggle('hidden',!answersVisible));}
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+function collapseAll(){document.querySelectorAll('.answer-box').forEach(b=>b.classList.add('hidden'));}
+function expandAll(){document.querySelectorAll('.answer-box').forEach(b=>b.classList.remove('hidden'));}
+function normalize(s){return s.toLowerCase().replace(/\s+/g,'').replace(/[×*]/g,'').replace(/[−]/g,'-').replace(/،/g,',');}
+function checkAnswer(input){
+const correct=input.dataset.answer;const user=input.value.trim();const card=input.closest('.question-card');
+if(!correct||correct==='shown'||!user){card.classList.remove('correct','incorrect');updateProgress();return;}
+const cn=normalize(correct);const un=normalize(user);
+const parts=cn.split(',').filter(p=>p.trim().length>0);
+if(un===cn||parts.some(p=>un.includes(p.trim()))){card.classList.add('correct');card.classList.remove('incorrect');}
+else{card.classList.add('incorrect');card.classList.remove('correct');}
+updateProgress();
+}
+function updateProgress(){
+const inputs=document.querySelectorAll('.answer-input');let answered=0;
+inputs.forEach(i=>{if(i.value.trim())answered++;});
+const pct=inputs.length>0?Math.round(answered/inputs.length*100):0;
+document.getElementById('progressBar').style.width=pct+'%';
+document.getElementById('progressText').textContent=pct+'%';
+}
+function gradeExam(){
+const paperScores={};examData.forEach(p=>{paperScores[p.id]={c:0,t:p.questions.length};});
+let totalCorrect=0,totalQ=0;
+document.querySelectorAll('.answer-input').forEach(input=>{
+totalQ++;const pid=input.dataset.paper;const correct=input.dataset.answer;const user=input.value.trim();const card=input.closest('.question-card');
+if(correct&&correct!=='shown'&&user){
+const cn=normalize(correct);const un=normalize(user);
+const parts=cn.split(',').filter(p=>p.trim().length>0);
+if(un===cn||parts.some(p=>un.includes(p.trim()))){
+totalCorrect++;if(paperScores[pid])paperScores[pid].c++;
+if(card){card.classList.add('correct');card.classList.remove('incorrect');}
+}else{if(card){card.classList.add('incorrect');card.classList.remove('correct');}}
+}});
+const score=totalQ>0?Math.round(totalCorrect/totalQ*100):0;
+document.getElementById('res-name').textContent=document.getElementById('studentName').value||T.student_default[currentLang];
+document.getElementById('res-date').textContent=document.getElementById('examDate').value||new Date().toLocaleDateString();
+document.getElementById('res-total').textContent=`${totalCorrect} / ${totalQ}`;
+document.getElementById('success-percent').textContent=score+'%';
+examData.forEach(p=>{const el=document.getElementById(`score-${p.id}`);if(el&&paperScores[p.id])el.textContent=`${paperScores[p.id].c}/${paperScores[p.id].t}`;});
+const badge=document.getElementById('success-badge');
+if(score>=90){badge.textContent=T.grade_excellent[currentLang];badge.className='success-badge grade-excellent';}
+else if(score>=75){badge.textContent=T.grade_good[currentLang];badge.className='success-badge grade-good';}
+else if(score>=50){badge.textContent=T.grade_pass[currentLang];badge.className='success-badge grade-pass';}
+else{badge.textContent=T.grade_fail[currentLang];badge.className='success-badge grade-fail';}
+document.getElementById('results-panel').classList.remove('hidden');
+document.getElementById('results-panel').scrollIntoView({behavior:'smooth'});
+}
+function startTimer(){
+setInterval(()=>{
+timeRemaining--;
+const m=Math.floor(timeRemaining/60);const s=timeRemaining%60;
+const el=document.getElementById('timer');
+el.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+if(timeRemaining<=300)el.classList.add('timer-warning');
+if(timeRemaining<=0){alert(T.timeup[currentLang]);gradeExam();}
+},1000);
+}
+document.addEventListener('click',function(e){
+if(e.target.matches('a[href^="#"]')){
+e.preventDefault();
+const t=document.querySelector(e.target.getAttribute('href'));
+if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+}
+});
+window.addEventListener('DOMContentLoaded',()=>{renderSidebar();renderExam();renderPaperScores();startTimer();updateProgress();});
+</script>
+</body>
+</html>
